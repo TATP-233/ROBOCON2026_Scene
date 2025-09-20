@@ -7,17 +7,22 @@
 ## 快速开始
 
 ### 环境要求
-- Python 3.7+
+- Python >= 3.7
 - MuJoCo物理引擎
 
 ### 安装依赖
 ```bash
-pip install "mujoco>=3.3.0"
+pip install mujoco
 ```
 
 ### 启动仿真
 ```bash
+# 请检查自己的mujoco版本
+pip list | grep mujoco
+# 如果是mujoco>=3.3.0 请使用以下的指令
 python -m mujoco.viewer --mjcf models/mjcf/robocon2026.xml
+# 如果是3.3.0之前的版本 则使用
+python -m mujoco.viewer --mjcf models/mjcf/robocon2026_old.xml
 ```
 
 ## 文件结构
@@ -40,8 +45,3 @@ ROBOCON2026_Scene/
 ## 相关链接
 - [ROBOCON官网](http://robocon.org.cn/sys-index/)
 - [MuJoCo文档](https://mujoco.readthedocs.io/)
-
-## 注意事项
-- 确保已正确安装MuJoCo依赖
-- 建议使用最新版本的MuJoCo以获得最佳兼容性
-- 场景文件包含完整的比赛场地3D模型和物理属性
