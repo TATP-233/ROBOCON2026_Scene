@@ -12,7 +12,7 @@
 
 ### 安装依赖
 ```bash
-pip install mujoco
+pip install "mujoco>=3.3.0"
 ```
 
 ### 启动仿真
