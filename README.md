@@ -47,3 +47,7 @@ ROBOCON2026_Scene/
 ## 相关链接
 - [ROBOCON官网](http://robocon.org.cn/sys-index/)
 - [MuJoCo文档](https://mujoco.readthedocs.io/)
+
+## 致谢
+
+感谢重庆邮电大学开源的[blender模型](https://rcbbs.top/t/topic/2261)。
