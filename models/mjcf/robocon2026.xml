@@ -53,24 +53,83 @@
 
       <body name="scene_collision" pos="0 0 0" quat="-0.707 0 0 0.707">
         <geom name="scene_part_001" mesh="scene_part_001" class="collision" quat="0.707 0.707 0 0"/>
-        <!-- <geom name="scene_part_002" mesh="scene_part_002" class="collision" quat="0.707 0.707 0 0"/> -->
+        <geom mesh="part_002_part_0" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_1" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_2" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_3" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_4" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_5" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_6" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_7" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_0" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_1" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_2" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_3" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_4" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_5" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_6" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_002_part_7" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_003" mesh="scene_part_003" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_004" mesh="scene_part_004" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_005" mesh="scene_part_005" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_006" mesh="scene_part_006" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_007" mesh="scene_part_007" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_008" mesh="scene_part_008" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_009" mesh="scene_part_009" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_010" mesh="scene_part_010" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_011" mesh="scene_part_011" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_005_part_0" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_005_part_1" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_005_part_2" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_005_part_3" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_005_part_4" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_005_part_5" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_005_part_6" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_0" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_1" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_2" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_3" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_4" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_5" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_6" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_7" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_8" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_9" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_10" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_11" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_12" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_13" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_14" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_15" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_16" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_17" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_18" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_19" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_20" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_21" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_22" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_010_part_23" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_0" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_1" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_2" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_3" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_4" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_5" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_6" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_7" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_8" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_9" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_10" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_11" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_12" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_13" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_14" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_15" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_16" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_17" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_18" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_19" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_20" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_21" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_22" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_23" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_24" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_011_part_25" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_012" mesh="scene_part_012" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_013" mesh="scene_part_013" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_014" mesh="scene_part_014" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_015" mesh="scene_part_015" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_016" mesh="scene_part_016" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_017" mesh="scene_part_017" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_018" mesh="scene_part_018" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_019" mesh="scene_part_019" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_020" mesh="scene_part_020" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_021" mesh="scene_part_021" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_022" mesh="scene_part_022" class="collision" quat="0.707 0.707 0 0"/>
@@ -95,89 +154,70 @@
         <geom name="scene_part_041" mesh="scene_part_041" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_042" mesh="scene_part_042" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_043" mesh="scene_part_043" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_044" mesh="scene_part_044" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_044_part_0" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_044_part_1" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_044_part_2" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_045" mesh="scene_part_045" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_046" mesh="scene_part_046" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_047" mesh="scene_part_047" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_048" mesh="scene_part_048" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_049" mesh="scene_part_049" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_050" mesh="scene_part_050" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_051" mesh="scene_part_051" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_052" mesh="scene_part_052" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_053" mesh="scene_part_053" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_048_part_0" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_048_part_1" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_049_part_0" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_049_part_1" class="collision" quat="0.707 0.707 0 0"/>
+        <geom mesh="part_049_part_2" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_054" mesh="scene_part_054" class="collision" quat="0.707 0.707 0 0"/>
         <geom name="scene_part_055" mesh="scene_part_055" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_056" mesh="scene_part_056" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_057" mesh="scene_part_057" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_058" mesh="scene_part_058" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_059" mesh="scene_part_059" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_060" mesh="scene_part_060" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_061" mesh="scene_part_061" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_062" mesh="scene_part_062" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_063" mesh="scene_part_063" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_064" mesh="scene_part_064" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_065" mesh="scene_part_065" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_066" mesh="scene_part_066" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_067" mesh="scene_part_067" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_068" mesh="scene_part_068" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_069" mesh="scene_part_069" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_070" mesh="scene_part_070" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_071" mesh="scene_part_071" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_072" mesh="scene_part_072" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_073" mesh="scene_part_073" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_074" mesh="scene_part_074" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_075" mesh="scene_part_075" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_076" mesh="scene_part_076" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_077" mesh="scene_part_077" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_078" mesh="scene_part_078" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_079" mesh="scene_part_079" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_080" mesh="scene_part_080" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_081" mesh="scene_part_081" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_082" mesh="scene_part_082" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_083" mesh="scene_part_083" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_084" mesh="scene_part_084" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_085" mesh="scene_part_085" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_086" mesh="scene_part_086" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_087" mesh="scene_part_087" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_088" mesh="scene_part_088" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_089" mesh="scene_part_089" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_090" mesh="scene_part_090" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_091" mesh="scene_part_091" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_092" mesh="scene_part_092" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_093" mesh="scene_part_093" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_094" mesh="scene_part_094" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_095" mesh="scene_part_095" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_096" mesh="scene_part_096" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_097" mesh="scene_part_097" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_098" mesh="scene_part_098" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_099" mesh="scene_part_099" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_100" mesh="scene_part_100" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_101" mesh="scene_part_101" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_102" mesh="scene_part_102" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_103" mesh="scene_part_103" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_104" mesh="scene_part_104" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_105" mesh="scene_part_105" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_106" mesh="scene_part_106" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_107" mesh="scene_part_107" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_108" mesh="scene_part_108" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_109" mesh="scene_part_109" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_110" mesh="scene_part_110" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_111" mesh="scene_part_111" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_112" mesh="scene_part_112" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_113" mesh="scene_part_113" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_114" mesh="scene_part_114" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_115" mesh="scene_part_115" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_116" mesh="scene_part_116" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_117" mesh="scene_part_117" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_118" mesh="scene_part_118" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_119" mesh="scene_part_119" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_120" mesh="scene_part_120" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_121" mesh="scene_part_121" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_122" mesh="scene_part_122" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_123" mesh="scene_part_123" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_124" mesh="scene_part_124" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_125" mesh="scene_part_125" class="collision" quat="0.707 0.707 0 0"/>
-        <geom name="scene_part_126" mesh="scene_part_126" class="collision" quat="0.707 0.707 0 0"/>
+
+        <geom mesh="parts_056_part_0" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_1" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_2" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_3" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_4" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_5" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_6" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_7" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_8" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_9" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_10" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_11" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_12" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_13" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_14" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_15" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_16" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_17" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_18" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_19" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_20" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_21" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_22" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_23" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_24" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_25" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_26" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_27" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_28" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_29" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_30" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_31" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_32" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_33" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_34" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_35" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_36" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_37" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_38" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_39" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_40" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_41" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_42" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_43" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_44" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_45" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_46" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_47" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_48" class="collision" quat="0.707 0 0 0.707"/>
+        <geom mesh="parts_056_part_49" class="collision" quat="0.707 0 0 0.707"/>
       </body>
     </body>
   </worldbody>
@@ -226,26 +266,78 @@
     <mesh name="robocon2026_17" file="visual/robocon2026_17.obj" />
     <mesh name="robocon2026_18" file="visual/robocon2026_18.obj" inertia="shell"/>
     <mesh name="robocon2026_19" file="visual/robocon2026_19.obj" />
-
     <mesh name="scene_part_001" file="parts/part_001.obj" scale="1 1 1"/>
-    <mesh name="scene_part_002" file="parts/part_002.obj" scale="1 1 1"/>
+    <mesh name="part_002_part_0" file="parts/part_002/part_0.obj" />
+    <mesh name="part_002_part_1" file="parts/part_002/part_1.obj" />
+    <mesh name="part_002_part_2" file="parts/part_002/part_2.obj" />
+    <mesh name="part_002_part_3" file="parts/part_002/part_3.obj" />
+    <mesh name="part_002_part_4" file="parts/part_002/part_4.obj" />
+    <mesh name="part_002_part_5" file="parts/part_002/part_5.obj" />
+    <mesh name="part_002_part_6" file="parts/part_002/part_6.obj" />
+    <mesh name="part_002_part_7" file="parts/part_002/part_7.obj" />
     <mesh name="scene_part_003" file="parts/part_003.obj" scale="1 1 1"/>
     <mesh name="scene_part_004" file="parts/part_004.obj" scale="1 1 1"/>
-    <mesh name="scene_part_005" file="parts/part_005.obj" scale="1 1 1"/>
-    <mesh name="scene_part_006" file="parts/part_006.obj" scale="1 1 1"/>
-    <mesh name="scene_part_007" file="parts/part_007.obj" scale="1 1 1"/>
-    <mesh name="scene_part_008" file="parts/part_008.obj" scale="1 1 1"/>
-    <mesh name="scene_part_009" file="parts/part_009.obj" scale="1 1 1"/>
-    <mesh name="scene_part_010" file="parts/part_010.obj" scale="1 1 1"/>
-    <mesh name="scene_part_011" file="parts/part_011.obj" scale="1 1 1"/>
+    <mesh name="part_005_part_0" file="parts/part_005/part_0.obj" />
+    <mesh name="part_005_part_1" file="parts/part_005/part_1.obj" />
+    <mesh name="part_005_part_2" file="parts/part_005/part_2.obj" />
+    <mesh name="part_005_part_3" file="parts/part_005/part_3.obj" />
+    <mesh name="part_005_part_4" file="parts/part_005/part_4.obj" />
+    <mesh name="part_005_part_5" file="parts/part_005/part_5.obj" />
+    <mesh name="part_005_part_6" file="parts/part_005/part_6.obj" />
+    <!-- <mesh name="scene_part_010" file="parts/part_010.obj" scale="1 1 1"/> -->
+    <mesh name="part_010_part_0" file="parts/part_010/part_0.obj" />
+    <mesh name="part_010_part_1" file="parts/part_010/part_1.obj" />
+    <mesh name="part_010_part_2" file="parts/part_010/part_2.obj" />
+    <mesh name="part_010_part_3" file="parts/part_010/part_3.obj" />
+    <mesh name="part_010_part_4" file="parts/part_010/part_4.obj" />
+    <mesh name="part_010_part_5" file="parts/part_010/part_5.obj" />
+    <mesh name="part_010_part_6" file="parts/part_010/part_6.obj" />
+    <mesh name="part_010_part_7" file="parts/part_010/part_7.obj" />
+    <mesh name="part_010_part_8" file="parts/part_010/part_8.obj" />
+    <mesh name="part_010_part_9" file="parts/part_010/part_9.obj" />
+    <mesh name="part_010_part_10" file="parts/part_010/part_10.obj" />
+    <mesh name="part_010_part_11" file="parts/part_010/part_11.obj" />
+    <mesh name="part_010_part_12" file="parts/part_010/part_12.obj" />
+    <mesh name="part_010_part_13" file="parts/part_010/part_13.obj" />
+    <mesh name="part_010_part_14" file="parts/part_010/part_14.obj" />
+    <mesh name="part_010_part_15" file="parts/part_010/part_15.obj" />
+    <mesh name="part_010_part_16" file="parts/part_010/part_16.obj" />
+    <mesh name="part_010_part_17" file="parts/part_010/part_17.obj" />
+    <mesh name="part_010_part_18" file="parts/part_010/part_18.obj" />
+    <mesh name="part_010_part_19" file="parts/part_010/part_19.obj" />
+    <mesh name="part_010_part_20" file="parts/part_010/part_20.obj" />
+    <mesh name="part_010_part_21" file="parts/part_010/part_21.obj" />
+    <mesh name="part_010_part_22" file="parts/part_010/part_22.obj" />
+    <mesh name="part_010_part_23" file="parts/part_010/part_23.obj" />
+    <!-- <mesh name="scene_part_011" file="parts/part_011.obj" scale="1 1 1"/> -->
+    <mesh name="part_011_part_0" file="parts/part_011/part_0.obj" />
+    <mesh name="part_011_part_1" file="parts/part_011/part_1.obj" />
+    <mesh name="part_011_part_2" file="parts/part_011/part_2.obj" />
+    <mesh name="part_011_part_3" file="parts/part_011/part_3.obj" />
+    <mesh name="part_011_part_4" file="parts/part_011/part_4.obj" />
+    <mesh name="part_011_part_5" file="parts/part_011/part_5.obj" />
+    <mesh name="part_011_part_6" file="parts/part_011/part_6.obj" />
+    <mesh name="part_011_part_7" file="parts/part_011/part_7.obj" />
+    <mesh name="part_011_part_8" file="parts/part_011/part_8.obj" />
+    <mesh name="part_011_part_9" file="parts/part_011/part_9.obj" />
+    <mesh name="part_011_part_10" file="parts/part_011/part_10.obj" />
+    <mesh name="part_011_part_11" file="parts/part_011/part_11.obj" />
+    <mesh name="part_011_part_12" file="parts/part_011/part_12.obj" />
+    <mesh name="part_011_part_13" file="parts/part_011/part_13.obj" />
+    <mesh name="part_011_part_14" file="parts/part_011/part_14.obj" />
+    <mesh name="part_011_part_15" file="parts/part_011/part_15.obj" />
+    <mesh name="part_011_part_16" file="parts/part_011/part_16.obj" />
+    <mesh name="part_011_part_17" file="parts/part_011/part_17.obj" />
+    <mesh name="part_011_part_18" file="parts/part_011/part_18.obj" />
+    <mesh name="part_011_part_19" file="parts/part_011/part_19.obj" />
+    <mesh name="part_011_part_20" file="parts/part_011/part_20.obj" />
+    <mesh name="part_011_part_21" file="parts/part_011/part_21.obj" />
+    <mesh name="part_011_part_22" file="parts/part_011/part_22.obj" />
+    <mesh name="part_011_part_23" file="parts/part_011/part_23.obj" />
+    <mesh name="part_011_part_24" file="parts/part_011/part_24.obj" />
+    <mesh name="part_011_part_25" file="parts/part_011/part_25.obj" />
     <mesh name="scene_part_012" file="parts/part_012.obj" scale="1 1 1"/>
     <mesh name="scene_part_013" file="parts/part_013.obj" scale="1 1 1"/>
-    <mesh name="scene_part_014" file="parts/part_014.obj" scale="1 1 1"/>
-    <mesh name="scene_part_015" file="parts/part_015.obj" scale="1 1 1"/>
-    <mesh name="scene_part_016" file="parts/part_016.obj" scale="1 1 1"/>
-    <mesh name="scene_part_017" file="parts/part_017.obj" scale="1 1 1"/>
-    <mesh name="scene_part_018" file="parts/part_018.obj" scale="1 1 1"/>
-    <mesh name="scene_part_019" file="parts/part_019.obj" scale="1 1 1"/>
     <mesh name="scene_part_020" file="parts/part_020.obj" scale="1 1 1"/>
     <mesh name="scene_part_021" file="parts/part_021.obj" scale="1 1 1"/>
     <mesh name="scene_part_022" file="parts/part_022.obj" scale="1 1 1"/>
@@ -270,89 +362,69 @@
     <mesh name="scene_part_041" file="parts/part_041.obj" scale="1 1 1"/>
     <mesh name="scene_part_042" file="parts/part_042.obj" scale="1 1 1"/>
     <mesh name="scene_part_043" file="parts/part_043.obj" scale="1 1 1"/>
-    <mesh name="scene_part_044" file="parts/part_044.obj" scale="1 1 1"/>
+    <mesh name="part_044_part_0" file="parts/part_044/part_0.obj" />
+    <mesh name="part_044_part_1" file="parts/part_044/part_1.obj" />
+    <mesh name="part_044_part_2" file="parts/part_044/part_2.obj" />
     <mesh name="scene_part_045" file="parts/part_045.obj" scale="1 1 1"/>
     <mesh name="scene_part_046" file="parts/part_046.obj" scale="1 1 1"/>
     <mesh name="scene_part_047" file="parts/part_047.obj" scale="1 1 1"/>
-    <mesh name="scene_part_048" file="parts/part_048.obj" scale="1 1 1"/>
-    <mesh name="scene_part_049" file="parts/part_049.obj" scale="1 1 1"/>
-    <mesh name="scene_part_050" file="parts/part_050.obj" scale="1 1 1"/>
-    <mesh name="scene_part_051" file="parts/part_051.obj" scale="1 1 1"/>
-    <mesh name="scene_part_052" file="parts/part_052.obj" scale="1 1 1"/>
-    <mesh name="scene_part_053" file="parts/part_053.obj" scale="1 1 1"/>
+    <mesh name="part_048_part_0" file="parts/part_048/part_0.obj" />
+    <mesh name="part_048_part_1" file="parts/part_048/part_1.obj" />
+    <mesh name="part_049_part_0" file="parts/part_049/part_0.obj" />
+    <mesh name="part_049_part_1" file="parts/part_049/part_1.obj" />
+    <mesh name="part_049_part_2" file="parts/part_049/part_2.obj" />
     <mesh name="scene_part_054" file="parts/part_054.obj" scale="1 1 1"/>
     <mesh name="scene_part_055" file="parts/part_055.obj" scale="1 1 1"/>
-    <mesh name="scene_part_056" file="parts/part_056.obj" scale="1 1 1"/>
-    <mesh name="scene_part_057" file="parts/part_057.obj" scale="1 1 1"/>
-    <mesh name="scene_part_058" file="parts/part_058.obj" scale="1 1 1"/>
-    <mesh name="scene_part_059" file="parts/part_059.obj" scale="1 1 1"/>
-    <mesh name="scene_part_060" file="parts/part_060.obj" scale="1 1 1"/>
-    <mesh name="scene_part_061" file="parts/part_061.obj" scale="1 1 1"/>
-    <mesh name="scene_part_062" file="parts/part_062.obj" scale="1 1 1"/>
-    <mesh name="scene_part_063" file="parts/part_063.obj" scale="1 1 1"/>
-    <mesh name="scene_part_064" file="parts/part_064.obj" scale="1 1 1"/>
-    <mesh name="scene_part_065" file="parts/part_065.obj" scale="1 1 1"/>
-    <mesh name="scene_part_066" file="parts/part_066.obj" scale="1 1 1"/>
-    <mesh name="scene_part_067" file="parts/part_067.obj" scale="1 1 1"/>
-    <mesh name="scene_part_068" file="parts/part_068.obj" scale="1 1 1"/>
-    <mesh name="scene_part_069" file="parts/part_069.obj" scale="1 1 1"/>
-    <mesh name="scene_part_070" file="parts/part_070.obj" scale="1 1 1"/>
-    <mesh name="scene_part_071" file="parts/part_071.obj" scale="1 1 1"/>
-    <mesh name="scene_part_072" file="parts/part_072.obj" scale="1 1 1"/>
-    <mesh name="scene_part_073" file="parts/part_073.obj" scale="1 1 1"/>
-    <mesh name="scene_part_074" file="parts/part_074.obj" scale="1 1 1"/>
-    <mesh name="scene_part_075" file="parts/part_075.obj" scale="1 1 1"/>
-    <mesh name="scene_part_076" file="parts/part_076.obj" scale="1 1 1"/>
-    <mesh name="scene_part_077" file="parts/part_077.obj" scale="1 1 1"/>
-    <mesh name="scene_part_078" file="parts/part_078.obj" scale="1 1 1"/>
-    <mesh name="scene_part_079" file="parts/part_079.obj" scale="1 1 1"/>
-    <mesh name="scene_part_080" file="parts/part_080.obj" scale="1 1 1"/>
-    <mesh name="scene_part_081" file="parts/part_081.obj" scale="1 1 1"/>
-    <mesh name="scene_part_082" file="parts/part_082.obj" scale="1 1 1"/>
-    <mesh name="scene_part_083" file="parts/part_083.obj" scale="1 1 1"/>
-    <mesh name="scene_part_084" file="parts/part_084.obj" scale="1 1 1"/>
-    <mesh name="scene_part_085" file="parts/part_085.obj" scale="1 1 1"/>
-    <mesh name="scene_part_086" file="parts/part_086.obj" scale="1 1 1"/>
-    <mesh name="scene_part_087" file="parts/part_087.obj" scale="1 1 1"/>
-    <mesh name="scene_part_088" file="parts/part_088.obj" scale="1 1 1"/>
-    <mesh name="scene_part_089" file="parts/part_089.obj" scale="1 1 1"/>
-    <mesh name="scene_part_090" file="parts/part_090.obj" scale="1 1 1"/>
-    <mesh name="scene_part_091" file="parts/part_091.obj" scale="1 1 1"/>
-    <mesh name="scene_part_092" file="parts/part_092.obj" scale="1 1 1"/>
-    <mesh name="scene_part_093" file="parts/part_093.obj" scale="1 1 1"/>
-    <mesh name="scene_part_094" file="parts/part_094.obj" scale="1 1 1"/>
-    <mesh name="scene_part_095" file="parts/part_095.obj" scale="1 1 1"/>
-    <mesh name="scene_part_096" file="parts/part_096.obj" scale="1 1 1"/>
-    <mesh name="scene_part_097" file="parts/part_097.obj" scale="1 1 1"/>
-    <mesh name="scene_part_098" file="parts/part_098.obj" scale="1 1 1"/>
-    <mesh name="scene_part_099" file="parts/part_099.obj" scale="1 1 1"/>
-    <mesh name="scene_part_100" file="parts/part_100.obj" scale="1 1 1"/>
-    <mesh name="scene_part_101" file="parts/part_101.obj" scale="1 1 1"/>
-    <mesh name="scene_part_102" file="parts/part_102.obj" scale="1 1 1"/>
-    <mesh name="scene_part_103" file="parts/part_103.obj" scale="1 1 1"/>
-    <mesh name="scene_part_104" file="parts/part_104.obj" scale="1 1 1"/>
-    <mesh name="scene_part_105" file="parts/part_105.obj" scale="1 1 1"/>
-    <mesh name="scene_part_106" file="parts/part_106.obj" scale="1 1 1"/>
-    <mesh name="scene_part_107" file="parts/part_107.obj" scale="1 1 1"/>
-    <mesh name="scene_part_108" file="parts/part_108.obj" scale="1 1 1"/>
-    <mesh name="scene_part_109" file="parts/part_109.obj" scale="1 1 1"/>
-    <mesh name="scene_part_110" file="parts/part_110.obj" scale="1 1 1"/>
-    <mesh name="scene_part_111" file="parts/part_111.obj" scale="1 1 1"/>
-    <mesh name="scene_part_112" file="parts/part_112.obj" scale="1 1 1"/>
-    <mesh name="scene_part_113" file="parts/part_113.obj" scale="1 1 1"/>
-    <mesh name="scene_part_114" file="parts/part_114.obj" scale="1 1 1"/>
-    <mesh name="scene_part_115" file="parts/part_115.obj" scale="1 1 1"/>
-    <mesh name="scene_part_116" file="parts/part_116.obj" scale="1 1 1"/>
-    <mesh name="scene_part_117" file="parts/part_117.obj" scale="1 1 1"/>
-    <mesh name="scene_part_118" file="parts/part_118.obj" scale="1 1 1"/>
-    <mesh name="scene_part_119" file="parts/part_119.obj" scale="1 1 1"/>
-    <mesh name="scene_part_120" file="parts/part_120.obj" scale="1 1 1"/>
-    <mesh name="scene_part_121" file="parts/part_121.obj" scale="1 1 1"/>
-    <mesh name="scene_part_122" file="parts/part_122.obj" scale="1 1 1"/>
-    <mesh name="scene_part_123" file="parts/part_123.obj" scale="1 1 1"/>
-    <mesh name="scene_part_124" file="parts/part_124.obj" scale="1 1 1"/>
-    <mesh name="scene_part_125" file="parts/part_125.obj" scale="1 1 1"/>
-    <mesh name="scene_part_126" file="parts/part_126.obj" scale="1 1 1"/>
+    <mesh name="parts_056_part_0" file="parts/parts_056/part_0.obj" />
+    <mesh name="parts_056_part_1" file="parts/parts_056/part_1.obj" />
+    <mesh name="parts_056_part_2" file="parts/parts_056/part_2.obj" />
+    <mesh name="parts_056_part_3" file="parts/parts_056/part_3.obj" />
+    <mesh name="parts_056_part_4" file="parts/parts_056/part_4.obj" />
+    <mesh name="parts_056_part_5" file="parts/parts_056/part_5.obj" />
+    <mesh name="parts_056_part_6" file="parts/parts_056/part_6.obj" />
+    <mesh name="parts_056_part_7" file="parts/parts_056/part_7.obj" />
+    <mesh name="parts_056_part_8" file="parts/parts_056/part_8.obj" />
+    <mesh name="parts_056_part_9" file="parts/parts_056/part_9.obj" />
+    <mesh name="parts_056_part_10" file="parts/parts_056/part_10.obj" />
+    <mesh name="parts_056_part_11" file="parts/parts_056/part_11.obj" />
+    <mesh name="parts_056_part_12" file="parts/parts_056/part_12.obj" />
+    <mesh name="parts_056_part_13" file="parts/parts_056/part_13.obj" />
+    <mesh name="parts_056_part_14" file="parts/parts_056/part_14.obj" />
+    <mesh name="parts_056_part_15" file="parts/parts_056/part_15.obj" />
+    <mesh name="parts_056_part_16" file="parts/parts_056/part_16.obj" />
+    <mesh name="parts_056_part_17" file="parts/parts_056/part_17.obj" />
+    <mesh name="parts_056_part_18" file="parts/parts_056/part_18.obj" />
+    <mesh name="parts_056_part_19" file="parts/parts_056/part_19.obj" />
+    <mesh name="parts_056_part_20" file="parts/parts_056/part_20.obj" />
+    <mesh name="parts_056_part_21" file="parts/parts_056/part_21.obj" />
+    <mesh name="parts_056_part_22" file="parts/parts_056/part_22.obj" />
+    <mesh name="parts_056_part_23" file="parts/parts_056/part_23.obj" />
+    <mesh name="parts_056_part_24" file="parts/parts_056/part_24.obj" />
+    <mesh name="parts_056_part_25" file="parts/parts_056/part_25.obj" />
+    <mesh name="parts_056_part_26" file="parts/parts_056/part_26.obj" />
+    <mesh name="parts_056_part_27" file="parts/parts_056/part_27.obj" />
+    <mesh name="parts_056_part_28" file="parts/parts_056/part_28.obj" />
+    <mesh name="parts_056_part_29" file="parts/parts_056/part_29.obj" />
+    <mesh name="parts_056_part_30" file="parts/parts_056/part_30.obj" />
+    <mesh name="parts_056_part_31" file="parts/parts_056/part_31.obj" />
+    <mesh name="parts_056_part_32" file="parts/parts_056/part_32.obj" />
+    <mesh name="parts_056_part_33" file="parts/parts_056/part_33.obj" />
+    <mesh name="parts_056_part_34" file="parts/parts_056/part_34.obj" />
+    <mesh name="parts_056_part_35" file="parts/parts_056/part_35.obj" />
+    <mesh name="parts_056_part_36" file="parts/parts_056/part_36.obj" />
+    <mesh name="parts_056_part_37" file="parts/parts_056/part_37.obj" />
+    <mesh name="parts_056_part_38" file="parts/parts_056/part_38.obj" />
+    <mesh name="parts_056_part_39" file="parts/parts_056/part_39.obj" />
+    <mesh name="parts_056_part_40" file="parts/parts_056/part_40.obj" />
+    <mesh name="parts_056_part_41" file="parts/parts_056/part_41.obj" />
+    <mesh name="parts_056_part_42" file="parts/parts_056/part_42.obj" />
+    <mesh name="parts_056_part_43" file="parts/parts_056/part_43.obj" />
+    <mesh name="parts_056_part_44" file="parts/parts_056/part_44.obj" />
+    <mesh name="parts_056_part_45" file="parts/parts_056/part_45.obj" />
+    <mesh name="parts_056_part_46" file="parts/parts_056/part_46.obj" />
+    <mesh name="parts_056_part_47" file="parts/parts_056/part_47.obj" />
+    <mesh name="parts_056_part_48" file="parts/parts_056/part_48.obj" />
+    <mesh name="parts_056_part_49" file="parts/parts_056/part_49.obj" />
   </asset>
 
 </mujoco>
