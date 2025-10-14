@@ -2,7 +2,7 @@
 
 第二十五届全国大学生机器人大赛ROBOCON"武林探秘"竞技赛MuJoCo仿真环境。
 
-![场景预览](assets/image.png)
+![场景预览](assets/image.jpg)
 
 ## 快速开始
 
@@ -28,17 +28,19 @@ python -m mujoco.viewer --mjcf models/mjcf/robocon2026_old.xml
 ## 文件结构
 ```
 ROBOCON2026_Scene/
-├── README.md                    # 项目说明文档
-├── assets/                      # 资源文件
+├── README.md                   # 项目说明文档
+├── assets/                     # 资源文件
 │   └── image.png               # 场景预览图
 ├── models/
 │   ├── meshes/                 # 3D模型文件
+│   │   ├── kfs                 # 武功秘籍
 │   │   ├── robocon2026.obj     # 主场景模型
 │   │   ├── robocon2026.mtl     # 材质文件
 │   │   ├── parts/              # 场景部件模型
 │   │   └── visual/             # 可视化资源
 │   └── mjcf/
-│       └── robocon2026.xml     # MuJoCo场景描述文件
+│       ├── robocon2026.xml     # MuJoCo场景描述文件
+│       └── robocon2026_old.xml # 适用于旧版mujoco
 └── 第二十五届全国大学生机器人大赛ROBOCON_u201C武林探秘_u201D竞技赛规则V.1.pdf
 ```
 

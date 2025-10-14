@@ -1,0 +1,103 @@
+<mujocoinclude>
+  <asset>
+    <material name="kfs_R1_KFS_blue" specular="0.5" shininess="0.341747925" texture="kfs_R1_KFS_blue_texture"/>
+    <texture type="2d" name="kfs_R1_KFS_blue_texture" file="kfs/textures/blueR1KFS.png"/>
+    <material name="kfs_R1_KFS_red" specular="0.5" shininess="0.341747925" texture="kfs_R1_KFS_red_texture"/>
+    <texture type="2d" name="kfs_R1_KFS_red_texture" file="kfs/textures/redR1KFS.png"/>
+
+    <material name="kfs_redR001" specular="0.5" shininess="0.341747925" texture="kfs_redR001_texture"/>
+    <texture type="2d" name="kfs_redR001_texture" file="kfs/textures/red1.png"/>
+    <material name="kfs_redR002" specular="0.5" shininess="0.341747925" texture="kfs_redR002_texture"/>
+    <texture type="2d" name="kfs_redR002_texture" file="kfs/textures/red2.png"/>
+    <material name="kfs_redR003" specular="0.5" shininess="0.341747925" texture="kfs_redR003_texture"/>
+    <texture type="2d" name="kfs_redR003_texture" file="kfs/textures/red3.png"/>
+    <material name="kfs_redR004" specular="0.5" shininess="0.341747925" texture="kfs_redR004_texture"/>
+    <texture type="2d" name="kfs_redR004_texture" file="kfs/textures/red4.png"/>
+    <material name="kfs_redR005" specular="0.5" shininess="0.341747925" texture="kfs_redR005_texture"/>
+    <texture type="2d" name="kfs_redR005_texture" file="kfs/textures/red5.png"/>
+    <material name="kfs_redR006" specular="0.5" shininess="0.341747925" texture="kfs_redR006_texture"/>
+    <texture type="2d" name="kfs_redR006_texture" file="kfs/textures/red6.png"/>
+    <material name="kfs_redR007" specular="0.5" shininess="0.341747925" texture="kfs_redR007_texture"/>
+    <texture type="2d" name="kfs_redR007_texture" file="kfs/textures/red7.png"/>
+    <material name="kfs_redR008" specular="0.5" shininess="0.341747925" texture="kfs_redR008_texture"/>
+    <texture type="2d" name="kfs_redR008_texture" file="kfs/textures/red8.png"/>
+    <material name="kfs_redR009" specular="0.5" shininess="0.341747925" texture="kfs_redR009_texture"/>
+    <texture type="2d" name="kfs_redR009_texture" file="kfs/textures/red9.png"/>
+    <material name="kfs_redR010" specular="0.5" shininess="0.341747925" texture="kfs_redR010_texture"/>
+    <texture type="2d" name="kfs_redR010_texture" file="kfs/textures/red10.png"/>
+    <material name="kfs_redR011" specular="0.5" shininess="0.341747925" texture="kfs_redR011_texture"/>
+    <texture type="2d" name="kfs_redR011_texture" file="kfs/textures/red11.png"/>
+    <material name="kfs_redR012" specular="0.5" shininess="0.341747925" texture="kfs_redR012_texture"/>
+    <texture type="2d" name="kfs_redR012_texture" file="kfs/textures/red12.png"/>
+    <material name="kfs_redR013" specular="0.5" shininess="0.341747925" texture="kfs_redR013_texture"/>
+    <texture type="2d" name="kfs_redR013_texture" file="kfs/textures/red13.png"/>
+    <material name="kfs_redR014" specular="0.5" shininess="0.341747925" texture="kfs_redR014_texture"/>
+    <texture type="2d" name="kfs_redR014_texture" file="kfs/textures/red14.png"/>
+    <material name="kfs_redR015" specular="0.5" shininess="0.341747925" texture="kfs_redR015_texture"/>
+    <texture type="2d" name="kfs_redR015_texture" file="kfs/textures/red15.png"/>
+
+    <material name="kfs_blueR001" rgba="1 1 1 1" specular="0.5" shininess="0.341747772" texture="kfs_blueR001_texture"/>
+    <texture type="2d" name="kfs_blueR001_texture" file="kfs/textures/blue1.png"/>
+    <material name="kfs_blueR002" specular="0.5" shininess="0.341747925" texture="kfs_blueR002_texture"/>
+    <texture type="2d" name="kfs_blueR002_texture" file="kfs/textures/blue2.png"/>
+    <material name="kfs_blueR003" specular="0.5" shininess="0.341747925" texture="kfs_blueR003_texture"/>
+    <texture type="2d" name="kfs_blueR003_texture" file="kfs/textures/blue3.png"/>
+    <material name="kfs_blueR004" specular="0.5" shininess="0.341747925" texture="kfs_blueR004_texture"/>
+    <texture type="2d" name="kfs_blueR004_texture" file="kfs/textures/blue4.png"/>
+    <material name="kfs_blueR005" specular="0.5" shininess="0.341747925" texture="kfs_blueR005_texture"/>
+    <texture type="2d" name="kfs_blueR005_texture" file="kfs/textures/blue5.png"/>
+    <material name="kfs_blueR006" specular="0.5" shininess="0.341747925" texture="kfs_blueR006_texture"/>
+    <texture type="2d" name="kfs_blueR006_texture" file="kfs/textures/blue6.png"/>
+    <material name="kfs_blueR007" specular="0.5" shininess="0.341747925" texture="kfs_blueR007_texture"/>
+    <texture type="2d" name="kfs_blueR007_texture" file="kfs/textures/blue7.png"/>
+    <material name="kfs_blueR008" specular="0.5" shininess="0.341747925" texture="kfs_blueR008_texture"/>
+    <texture type="2d" name="kfs_blueR008_texture" file="kfs/textures/blue8.png"/>
+    <material name="kfs_blueR009" specular="0.5" shininess="0.341747925" texture="kfs_blueR009_texture"/>
+    <texture type="2d" name="kfs_blueR009_texture" file="kfs/textures/blue9.png"/>
+    <material name="kfs_blueR010" specular="0.5" shininess="0.341747925" texture="kfs_blueR010_texture"/>
+    <texture type="2d" name="kfs_blueR010_texture" file="kfs/textures/blue10.png"/>
+    <material name="kfs_blueR011" specular="0.5" shininess="0.341747925" texture="kfs_blueR011_texture"/>
+    <texture type="2d" name="kfs_blueR011_texture" file="kfs/textures/blue11.png"/>
+    <material name="kfs_blueR012" specular="0.5" shininess="0.341747925" texture="kfs_blueR012_texture"/>
+    <texture type="2d" name="kfs_blueR012_texture" file="kfs/textures/blue12.png"/>
+    <material name="kfs_blueR013" specular="0.5" shininess="0.341747925" texture="kfs_blueR013_texture"/>
+    <texture type="2d" name="kfs_blueR013_texture" file="kfs/textures/blue13.png"/>
+    <material name="kfs_blueR014" specular="0.5" shininess="0.341747925" texture="kfs_blueR014_texture"/>
+    <texture type="2d" name="kfs_blueR014_texture" file="kfs/textures/blue14.png"/>
+    <material name="kfs_blueR015" specular="0.5" shininess="0.341747925" texture="kfs_blueR015_texture"/>
+    <texture type="2d" name="kfs_blueR015_texture" file="kfs/textures/blue15.png"/>
+
+    <mesh name="kfs_00" file="kfs/kfs_00.obj"/>
+    <mesh name="kfs_01" file="kfs/kfs_01.obj"/>
+    <mesh name="kfs_03" file="kfs/kfs_03.obj"/>
+    <mesh name="kfs_04" file="kfs/kfs_04.obj"/>
+    <mesh name="kfs_05" file="kfs/kfs_05.obj"/>
+    <mesh name="kfs_06" file="kfs/kfs_06.obj"/>
+    <mesh name="kfs_07" file="kfs/kfs_07.obj"/>
+    <mesh name="kfs_08" file="kfs/kfs_08.obj"/>
+    <mesh name="kfs_09" file="kfs/kfs_09.obj"/>
+    <mesh name="kfs_10" file="kfs/kfs_10.obj"/>
+    <mesh name="kfs_11" file="kfs/kfs_11.obj"/>
+    <mesh name="kfs_12" file="kfs/kfs_12.obj"/>
+    <mesh name="kfs_13" file="kfs/kfs_13.obj"/>
+    <mesh name="kfs_14" file="kfs/kfs_14.obj"/>
+    <mesh name="kfs_15" file="kfs/kfs_15.obj"/>
+    <mesh name="kfs_16" file="kfs/kfs_16.obj"/>
+    <mesh name="kfs_17" file="kfs/kfs_17.obj"/>
+    <mesh name="kfs_18" file="kfs/kfs_18.obj"/>
+    <mesh name="kfs_19" file="kfs/kfs_19.obj"/>
+    <mesh name="kfs_20" file="kfs/kfs_20.obj"/>
+    <mesh name="kfs_21" file="kfs/kfs_21.obj"/>
+    <mesh name="kfs_22" file="kfs/kfs_22.obj"/>
+    <mesh name="kfs_23" file="kfs/kfs_23.obj"/>
+    <mesh name="kfs_24" file="kfs/kfs_24.obj"/>
+    <mesh name="kfs_25" file="kfs/kfs_25.obj"/>
+    <mesh name="kfs_26" file="kfs/kfs_26.obj"/>
+    <mesh name="kfs_27" file="kfs/kfs_27.obj"/>
+    <mesh name="kfs_28" file="kfs/kfs_28.obj"/>
+    <mesh name="kfs_29" file="kfs/kfs_29.obj"/>
+    <mesh name="kfs_30" file="kfs/kfs_30.obj"/>
+    <mesh name="kfs_31" file="kfs/kfs_31.obj"/>
+    <mesh name="kfs_32" file="kfs/kfs_32.obj"/>
+  </asset>
+</mujocoinclude>
