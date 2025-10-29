@@ -27,31 +27,7 @@ def publish_point_cloud(publisher, points, frame_id, stamp):
         PointField(name='x', offset=0, datatype=PointField.FLOAT32, count=1),
         PointField(name='y', offset=4, datatype=PointField.FLOAT32, count=1),
         PointField(name='z', offset=8, datatype=PointField.FLOAT32, count=1),
-        PointField(name='intensity', offset=12, datatype=PointField.FLOAT32, count=1)
     ]
-
-    # 添加强度值
-    if len(points.shape) == 2:
-        # 如果是(N, 3)形状，转换为(3, N)以便处理
-        points_transposed = points.T if points.shape[1] == 3 else points
-
-        if points_transposed.shape[0] == 3:
-            # 添加强度通道
-            points_with_intensity = np.vstack([
-                points_transposed, 
-                np.ones(points_transposed.shape[1], dtype=np.float32)
-            ])
-        else:
-            points_with_intensity = points_transposed
-    else:
-        # 如果点云已经是(3, N)形状
-        if points.shape[0] == 3:
-            points_with_intensity = np.vstack([
-                points, 
-                np.ones(points.shape[1], dtype=np.float32)
-            ])
-        else:
-            points_with_intensity = points
 
     # 创建ROS2 PointCloud2消息
     pc_msg = PointCloud2()
@@ -59,14 +35,13 @@ def publish_point_cloud(publisher, points, frame_id, stamp):
     pc_msg.header.stamp = stamp
     pc_msg.fields = fields
     pc_msg.is_bigendian = False
-    pc_msg.point_step = 16  # 4 个 float32 (x,y,z,intensity)
-    pc_msg.row_step = pc_msg.point_step * points_with_intensity.shape[1]
+    pc_msg.point_step = 12  # 3 个 float32 (x,y,z)
+    pc_msg.row_step = pc_msg.point_step * points.shape[0]
     pc_msg.height = 1
-    pc_msg.width = points_with_intensity.shape[1]
+    pc_msg.width = points.shape[0]
     pc_msg.is_dense = True
 
-    # 转置回(N, 4)格式并转换为字节数组
-    pc_msg.data = np.transpose(points_with_intensity).astype(np.float32).tobytes()
+    pc_msg.data = points.tobytes()
 
     publisher.publish(pc_msg)
 
@@ -94,7 +69,7 @@ class LidarVisualizer(Node):
         self.site_name = "lidar_site"
 
         # 创建点云发布者
-        self.pub_taichi = self.create_publisher(PointCloud2, '/lidar_points_taichi', 1)
+        self.pub_taichi = self.create_publisher(PointCloud2, '/lidar_points', 1)
 
         # 创建TF广播者
         self.tf_broadcaster = TransformBroadcaster(self)
