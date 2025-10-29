@@ -2,7 +2,7 @@
 
 第二十五届全国大学生机器人大赛ROBOCON"武林探秘"竞技赛MuJoCo仿真环境。
 
-![场景预览](assets/image.jpg)
+<img src="assets/image.jpg" alt="场景预览" style="zoom:50%;" />
 
 ## 快速开始
 
@@ -25,6 +25,20 @@ python -m mujoco.viewer --mjcf models/mjcf/robocon2026.xml
 python -m mujoco.viewer --mjcf models/mjcf/robocon2026_old.xml
 ```
 
+## 激光雷达模拟
+
+请先按照[LiDAR安装教程](https://github.com/TATP-233/MuJoCo-LiDAR/blob/main/README_zh.md#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85)，安装好lidar模拟环境（推荐使用gpu后端）
+
+```bash
+cd ROBOCON2026_Scene
+python src/lidar_sim.py
+# 参考终端的指令:
+# 1. 启动rviz2，可视化激光雷达点云
+# 2. 鼠标操作，拖动绿色方块，控制激光雷达的位置
+```
+
+<img src="./assets/lidar_sim.png" alt="image-lidar_sim" style="zoom:50%;" />
+
 ## 文件结构
 ```
 ROBOCON2026_Scene/
@@ -39,8 +53,15 @@ ROBOCON2026_Scene/
 │   │   ├── parts/              # 场景部件模型
 │   │   └── visual/             # 可视化资源
 │   └── mjcf/
+│       ├── kfs.xml             # 武功秘籍
+│       ├── kfs_dep.xml         # 武功秘籍资产依赖
+│       ├── mocap_env.xml       # 用于显示激光雷达场景
 │       ├── robocon2026.xml     # MuJoCo场景描述文件
 │       └── robocon2026_old.xml # 适用于旧版mujoco
+├── src
+│   ├── lidar_sim.py            # 激光雷达模拟脚本
+│   └── rviz_config             # rviz配置文件
+│       └── rviz2_config.rviz
 └── 第二十五届全国大学生机器人大赛ROBOCON_u201C武林探秘_u201D竞技赛规则V.1.pdf
 ```
 

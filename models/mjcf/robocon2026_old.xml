@@ -27,10 +27,6 @@
 
     <camera name="top_view" pos="0 0 20" xyaxes="0 -1 0 1 0 0"/>
 
-    <body name="lidar_base" pos="0 0 1">
-      <site name="lidar_site" size="0.005" rgba="1 0 0 1"/>
-    </body>
-
     <include file="kfs.xml"/>
 
     <body name="scene" childclass="scene_attribute" pos="0.4 0 0">
@@ -409,6 +405,6 @@
     <mesh name="parts_056_part_49" file="parts/parts_056/part_49.obj"/>
   </asset>
 
-  <include file="kfs_dependencies.xml"/>
+  <include file="kfs_dep.xml"/>
 
 </mujoco>
