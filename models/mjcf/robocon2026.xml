@@ -1,11 +1,10 @@
 <mujoco>
   <default>
     <default class="scene_attribute">
-      <default class="visual">
+      <default class="scene_visual">
         <geom contype="0" conaffinity="0" group="2"/>
       </default>
-      <default class="collision">
-        <!-- <geom condim="3" contype="0" conaffinity="1" priority="1" group="3" solref="0.005 1" friction="1 0.01 0.01" type="mesh"/> -->
+      <default class="scene_collision">
         <geom condim="3" priority="1" group="3" solimp="0.999 0.995 0.001" solref="0.01 1" friction="1 0.005 0.0001" type="mesh"/>
       </default>
     </default>
@@ -32,186 +31,186 @@
 
     <body name="scene" childclass="scene_attribute" pos="0.4 0 0">
       <body name="scene_visual">
-        <geom type="mesh" mesh="robocon2026_0" class="visual" material="robocon2026_mtl_9gg"/>
-        <geom type="mesh" mesh="robocon2026_2" class="visual" material="robocon2026_green"/>
-        <geom type="mesh" mesh="robocon2026_3" class="visual" material="robocon2026_stair_green"/>
-        <geom type="mesh" mesh="robocon2026_4" class="visual" material="robocon2026_yellow"/>
-        <geom type="mesh" mesh="robocon2026_8" class="visual" material="robocon2026_mtl_toumingge"/>
-        <geom type="mesh" mesh="robocon2026_9" class="visual" material="robocon2026_start_red"/>
-        <geom type="mesh" mesh="robocon2026_10" class="visual" material="robocon2026_weapon_grey"/>
-        <geom type="mesh" mesh="robocon2026_11" class="visual" material="robocon2026_white_line"/>
-        <geom type="mesh" mesh="robocon2026_12" class="visual" material="robocon2026_blue_floor"/>
-        <geom type="mesh" mesh="robocon2026_13" class="visual" material="robocon2026_red_floor"/>
-        <geom type="mesh" mesh="robocon2026_15" class="visual" material="robocon2026_start_blue"/>
-        <geom type="mesh" mesh="robocon2026_16" class="visual" material="robocon2026_wood"/>
-        <geom type="mesh" mesh="robocon2026_17" class="visual" material="robocon2026_sidebar"/>
-        <geom type="mesh" mesh="robocon2026_18" class="visual" material="robocon2026_mtl_floor"/>
-        <geom type="mesh" mesh="robocon2026_19" class="visual" material="robocon2026_mtl_009"/>
+        <geom type="mesh" mesh="robocon2026_0" class="scene_visual" material="robocon2026_mtl_9gg"/>
+        <geom type="mesh" mesh="robocon2026_2" class="scene_visual" material="robocon2026_green"/>
+        <geom type="mesh" mesh="robocon2026_3" class="scene_visual" material="robocon2026_stair_green"/>
+        <geom type="mesh" mesh="robocon2026_4" class="scene_visual" material="robocon2026_yellow"/>
+        <geom type="mesh" mesh="robocon2026_8" class="scene_visual" material="robocon2026_mtl_toumingge"/>
+        <geom type="mesh" mesh="robocon2026_9" class="scene_visual" material="robocon2026_start_red"/>
+        <geom type="mesh" mesh="robocon2026_10" class="scene_visual" material="robocon2026_weapon_grey"/>
+        <geom type="mesh" mesh="robocon2026_11" class="scene_visual" material="robocon2026_white_line"/>
+        <geom type="mesh" mesh="robocon2026_12" class="scene_visual" material="robocon2026_blue_floor"/>
+        <geom type="mesh" mesh="robocon2026_13" class="scene_visual" material="robocon2026_red_floor"/>
+        <geom type="mesh" mesh="robocon2026_15" class="scene_visual" material="robocon2026_start_blue"/>
+        <geom type="mesh" mesh="robocon2026_16" class="scene_visual" material="robocon2026_wood"/>
+        <geom type="mesh" mesh="robocon2026_17" class="scene_visual" material="robocon2026_sidebar"/>
+        <geom type="mesh" mesh="robocon2026_18" class="scene_visual" material="robocon2026_mtl_floor"/>
+        <geom type="mesh" mesh="robocon2026_19" class="scene_visual" material="robocon2026_mtl_009"/>
       </body>
 
       <body name="scene_collision">
-        <geom type="plane" size="10 10 0.01" class="collision"/>
-        <geom mesh="scene_part_001" class="collision"/>
-        <geom mesh="part_002_part_0" class="collision"/>
-        <geom mesh="part_002_part_1" class="collision"/>
-        <geom mesh="part_002_part_2" class="collision"/>
-        <geom mesh="part_002_part_3" class="collision"/>
-        <geom mesh="part_002_part_4" class="collision"/>
-        <geom mesh="part_002_part_5" class="collision"/>
-        <geom mesh="part_002_part_6" class="collision"/>
-        <geom mesh="part_002_part_7" class="collision"/>
-        <geom mesh="part_002_part_0" class="collision"/>
-        <geom mesh="part_002_part_1" class="collision"/>
-        <geom mesh="part_002_part_2" class="collision"/>
-        <geom mesh="part_002_part_3" class="collision"/>
-        <geom mesh="part_002_part_4" class="collision"/>
-        <geom mesh="part_002_part_5" class="collision"/>
-        <geom mesh="part_002_part_6" class="collision"/>
-        <geom mesh="part_002_part_7" class="collision"/>
-        <geom mesh="part_005_part_0" class="collision"/>
-        <geom mesh="part_005_part_1" class="collision"/>
-        <geom mesh="part_005_part_2" class="collision"/>
-        <geom mesh="part_005_part_3" class="collision"/>
-        <geom mesh="part_005_part_4" class="collision"/>
-        <geom mesh="part_005_part_5" class="collision"/>
-        <geom mesh="part_005_part_6" class="collision"/>
-        <geom mesh="part_010_part_0" class="collision"/>
-        <geom mesh="part_010_part_1" class="collision"/>
-        <geom mesh="part_010_part_2" class="collision"/>
-        <geom mesh="part_010_part_3" class="collision"/>
-        <geom mesh="part_010_part_4" class="collision"/>
-        <geom mesh="part_010_part_5" class="collision"/>
-        <geom mesh="part_010_part_6" class="collision"/>
-        <geom mesh="part_010_part_7" class="collision"/>
-        <geom mesh="part_010_part_8" class="collision"/>
-        <geom mesh="part_010_part_9" class="collision"/>
-        <geom mesh="part_010_part_10" class="collision"/>
-        <geom mesh="part_010_part_11" class="collision"/>
-        <geom mesh="part_010_part_12" class="collision"/>
-        <geom mesh="part_010_part_13" class="collision"/>
-        <geom mesh="part_010_part_14" class="collision"/>
-        <geom mesh="part_010_part_15" class="collision"/>
-        <geom mesh="part_010_part_16" class="collision"/>
-        <geom mesh="part_010_part_17" class="collision"/>
-        <geom mesh="part_010_part_18" class="collision"/>
-        <geom mesh="part_010_part_19" class="collision"/>
-        <geom mesh="part_010_part_20" class="collision"/>
-        <geom mesh="part_010_part_21" class="collision"/>
-        <geom mesh="part_010_part_22" class="collision"/>
-        <geom mesh="part_010_part_23" class="collision"/>
-        <geom mesh="part_011_part_0" class="collision"/>
-        <geom mesh="part_011_part_1" class="collision"/>
-        <geom mesh="part_011_part_2" class="collision"/>
-        <geom mesh="part_011_part_3" class="collision"/>
-        <geom mesh="part_011_part_4" class="collision"/>
-        <geom mesh="part_011_part_5" class="collision"/>
-        <geom mesh="part_011_part_6" class="collision"/>
-        <geom mesh="part_011_part_7" class="collision"/>
-        <geom mesh="part_011_part_8" class="collision"/>
-        <geom mesh="part_011_part_9" class="collision"/>
-        <geom mesh="part_011_part_10" class="collision"/>
-        <geom mesh="part_011_part_11" class="collision"/>
-        <geom mesh="part_011_part_12" class="collision"/>
-        <geom mesh="part_011_part_13" class="collision"/>
-        <geom mesh="part_011_part_14" class="collision"/>
-        <geom mesh="part_011_part_15" class="collision"/>
-        <geom mesh="part_011_part_16" class="collision"/>
-        <geom mesh="part_011_part_17" class="collision"/>
-        <geom mesh="part_011_part_18" class="collision"/>
-        <geom mesh="part_011_part_19" class="collision"/>
-        <geom mesh="part_011_part_20" class="collision"/>
-        <geom mesh="part_011_part_21" class="collision"/>
-        <geom mesh="part_011_part_22" class="collision"/>
-        <geom mesh="part_011_part_23" class="collision"/>
-        <geom mesh="part_011_part_24" class="collision"/>
-        <geom mesh="part_011_part_25" class="collision"/>
-        <geom mesh="scene_part_020" class="collision"/>
-        <geom mesh="scene_part_021" class="collision"/>
-        <geom mesh="scene_part_022" class="collision"/>
-        <geom mesh="scene_part_023" class="collision"/>
-        <geom mesh="scene_part_024" class="collision"/>
-        <geom mesh="scene_part_025" class="collision"/>
-        <geom mesh="scene_part_026" class="collision"/>
-        <geom mesh="scene_part_027" class="collision"/>
-        <geom mesh="scene_part_028" class="collision"/>
-        <geom mesh="scene_part_029" class="collision"/>
-        <geom mesh="scene_part_030" class="collision"/>
-        <geom mesh="scene_part_031" class="collision"/>
-        <geom mesh="scene_part_032" class="collision"/>
-        <geom mesh="scene_part_033" class="collision"/>
-        <geom mesh="scene_part_034" class="collision"/>
-        <geom mesh="scene_part_035" class="collision"/>
-        <geom mesh="scene_part_036" class="collision"/>
-        <geom mesh="scene_part_037" class="collision"/>
-        <geom mesh="scene_part_038" class="collision"/>
-        <geom mesh="scene_part_039" class="collision"/>
-        <geom mesh="scene_part_040" class="collision"/>
-        <geom mesh="scene_part_041" class="collision"/>
-        <geom mesh="scene_part_042" class="collision"/>
-        <geom mesh="scene_part_043" class="collision"/>
-        <geom mesh="part_044_part_0" class="collision"/>
-        <geom mesh="part_044_part_1" class="collision"/>
-        <geom mesh="part_044_part_2" class="collision"/>
-        <geom mesh="scene_part_045" class="collision"/>
-        <geom mesh="scene_part_046" class="collision"/>
-        <geom mesh="scene_part_047" class="collision"/>
-        <geom mesh="part_048_part_0" class="collision"/>
-        <geom mesh="part_048_part_1" class="collision"/>
-        <geom mesh="part_049_part_0" class="collision"/>
-        <geom mesh="part_049_part_1" class="collision"/>
-        <geom mesh="part_049_part_2" class="collision"/>
-        <geom mesh="scene_part_054" class="collision"/>
-        <geom mesh="scene_part_055" class="collision"/>
-        <geom mesh="parts_056_part_0" class="collision"/>
-        <geom mesh="parts_056_part_1" class="collision"/>
-        <geom mesh="parts_056_part_2" class="collision"/>
-        <geom mesh="parts_056_part_3" class="collision"/>
-        <geom mesh="parts_056_part_4" class="collision"/>
-        <geom mesh="parts_056_part_5" class="collision"/>
-        <geom mesh="parts_056_part_6" class="collision"/>
-        <geom mesh="parts_056_part_7" class="collision"/>
-        <geom mesh="parts_056_part_8" class="collision"/>
-        <geom mesh="parts_056_part_9" class="collision"/>
-        <geom mesh="parts_056_part_10" class="collision"/>
-        <geom mesh="parts_056_part_11" class="collision"/>
-        <geom mesh="parts_056_part_12" class="collision"/>
-        <geom mesh="parts_056_part_13" class="collision"/>
-        <geom mesh="parts_056_part_14" class="collision"/>
-        <geom mesh="parts_056_part_15" class="collision"/>
-        <geom mesh="parts_056_part_16" class="collision"/>
-        <geom mesh="parts_056_part_17" class="collision"/>
-        <geom mesh="parts_056_part_18" class="collision"/>
-        <geom mesh="parts_056_part_19" class="collision"/>
-        <geom mesh="parts_056_part_20" class="collision"/>
-        <geom mesh="parts_056_part_21" class="collision"/>
-        <geom mesh="parts_056_part_22" class="collision"/>
-        <geom mesh="parts_056_part_23" class="collision"/>
-        <geom mesh="parts_056_part_24" class="collision"/>
-        <geom mesh="parts_056_part_25" class="collision"/>
-        <geom mesh="parts_056_part_26" class="collision"/>
-        <geom mesh="parts_056_part_27" class="collision"/>
-        <geom mesh="parts_056_part_28" class="collision"/>
-        <geom mesh="parts_056_part_29" class="collision"/>
-        <geom mesh="parts_056_part_30" class="collision"/>
-        <geom mesh="parts_056_part_31" class="collision"/>
-        <geom mesh="parts_056_part_32" class="collision"/>
-        <geom mesh="parts_056_part_33" class="collision"/>
-        <geom mesh="parts_056_part_34" class="collision"/>
-        <geom mesh="parts_056_part_35" class="collision"/>
-        <geom mesh="parts_056_part_36" class="collision"/>
-        <geom mesh="parts_056_part_37" class="collision"/>
-        <geom mesh="parts_056_part_38" class="collision"/>
-        <geom mesh="parts_056_part_39" class="collision"/>
-        <geom mesh="parts_056_part_40" class="collision"/>
-        <geom mesh="parts_056_part_41" class="collision"/>
-        <geom mesh="parts_056_part_42" class="collision"/>
-        <geom mesh="parts_056_part_43" class="collision"/>
-        <geom mesh="parts_056_part_44" class="collision"/>
-        <geom mesh="parts_056_part_45" class="collision"/>
-        <geom mesh="parts_056_part_46" class="collision"/>
-        <geom mesh="parts_056_part_47" class="collision"/>
-        <geom mesh="parts_056_part_48" class="collision"/>
-        <geom mesh="parts_056_part_49" class="collision"/>
+        <geom type="plane" size="10 10 0.01" class="scene_collision"/>
+        <geom mesh="scene_part_001" class="scene_collision"/>
+        <geom mesh="part_002_part_0" class="scene_collision"/>
+        <geom mesh="part_002_part_1" class="scene_collision"/>
+        <geom mesh="part_002_part_2" class="scene_collision"/>
+        <geom mesh="part_002_part_3" class="scene_collision"/>
+        <geom mesh="part_002_part_4" class="scene_collision"/>
+        <geom mesh="part_002_part_5" class="scene_collision"/>
+        <geom mesh="part_002_part_6" class="scene_collision"/>
+        <geom mesh="part_002_part_7" class="scene_collision"/>
+        <geom mesh="part_002_part_0" class="scene_collision"/>
+        <geom mesh="part_002_part_1" class="scene_collision"/>
+        <geom mesh="part_002_part_2" class="scene_collision"/>
+        <geom mesh="part_002_part_3" class="scene_collision"/>
+        <geom mesh="part_002_part_4" class="scene_collision"/>
+        <geom mesh="part_002_part_5" class="scene_collision"/>
+        <geom mesh="part_002_part_6" class="scene_collision"/>
+        <geom mesh="part_002_part_7" class="scene_collision"/>
+        <geom mesh="part_005_part_0" class="scene_collision"/>
+        <geom mesh="part_005_part_1" class="scene_collision"/>
+        <geom mesh="part_005_part_2" class="scene_collision"/>
+        <geom mesh="part_005_part_3" class="scene_collision"/>
+        <geom mesh="part_005_part_4" class="scene_collision"/>
+        <geom mesh="part_005_part_5" class="scene_collision"/>
+        <geom mesh="part_005_part_6" class="scene_collision"/>
+        <geom mesh="part_010_part_0" class="scene_collision"/>
+        <geom mesh="part_010_part_1" class="scene_collision"/>
+        <geom mesh="part_010_part_2" class="scene_collision"/>
+        <geom mesh="part_010_part_3" class="scene_collision"/>
+        <geom mesh="part_010_part_4" class="scene_collision"/>
+        <geom mesh="part_010_part_5" class="scene_collision"/>
+        <geom mesh="part_010_part_6" class="scene_collision"/>
+        <geom mesh="part_010_part_7" class="scene_collision"/>
+        <geom mesh="part_010_part_8" class="scene_collision"/>
+        <geom mesh="part_010_part_9" class="scene_collision"/>
+        <geom mesh="part_010_part_10" class="scene_collision"/>
+        <geom mesh="part_010_part_11" class="scene_collision"/>
+        <geom mesh="part_010_part_12" class="scene_collision"/>
+        <geom mesh="part_010_part_13" class="scene_collision"/>
+        <geom mesh="part_010_part_14" class="scene_collision"/>
+        <geom mesh="part_010_part_15" class="scene_collision"/>
+        <geom mesh="part_010_part_16" class="scene_collision"/>
+        <geom mesh="part_010_part_17" class="scene_collision"/>
+        <geom mesh="part_010_part_18" class="scene_collision"/>
+        <geom mesh="part_010_part_19" class="scene_collision"/>
+        <geom mesh="part_010_part_20" class="scene_collision"/>
+        <geom mesh="part_010_part_21" class="scene_collision"/>
+        <geom mesh="part_010_part_22" class="scene_collision"/>
+        <geom mesh="part_010_part_23" class="scene_collision"/>
+        <geom mesh="part_011_part_0" class="scene_collision"/>
+        <geom mesh="part_011_part_1" class="scene_collision"/>
+        <geom mesh="part_011_part_2" class="scene_collision"/>
+        <geom mesh="part_011_part_3" class="scene_collision"/>
+        <geom mesh="part_011_part_4" class="scene_collision"/>
+        <geom mesh="part_011_part_5" class="scene_collision"/>
+        <geom mesh="part_011_part_6" class="scene_collision"/>
+        <geom mesh="part_011_part_7" class="scene_collision"/>
+        <geom mesh="part_011_part_8" class="scene_collision"/>
+        <geom mesh="part_011_part_9" class="scene_collision"/>
+        <geom mesh="part_011_part_10" class="scene_collision"/>
+        <geom mesh="part_011_part_11" class="scene_collision"/>
+        <geom mesh="part_011_part_12" class="scene_collision"/>
+        <geom mesh="part_011_part_13" class="scene_collision"/>
+        <geom mesh="part_011_part_14" class="scene_collision"/>
+        <geom mesh="part_011_part_15" class="scene_collision"/>
+        <geom mesh="part_011_part_16" class="scene_collision"/>
+        <geom mesh="part_011_part_17" class="scene_collision"/>
+        <geom mesh="part_011_part_18" class="scene_collision"/>
+        <geom mesh="part_011_part_19" class="scene_collision"/>
+        <geom mesh="part_011_part_20" class="scene_collision"/>
+        <geom mesh="part_011_part_21" class="scene_collision"/>
+        <geom mesh="part_011_part_22" class="scene_collision"/>
+        <geom mesh="part_011_part_23" class="scene_collision"/>
+        <geom mesh="part_011_part_24" class="scene_collision"/>
+        <geom mesh="part_011_part_25" class="scene_collision"/>
+        <geom mesh="scene_part_020" class="scene_collision"/>
+        <geom mesh="scene_part_021" class="scene_collision"/>
+        <geom mesh="scene_part_022" class="scene_collision"/>
+        <geom mesh="scene_part_023" class="scene_collision"/>
+        <geom mesh="scene_part_024" class="scene_collision"/>
+        <geom mesh="scene_part_025" class="scene_collision"/>
+        <geom mesh="scene_part_026" class="scene_collision"/>
+        <geom mesh="scene_part_027" class="scene_collision"/>
+        <geom mesh="scene_part_028" class="scene_collision"/>
+        <geom mesh="scene_part_029" class="scene_collision"/>
+        <geom mesh="scene_part_030" class="scene_collision"/>
+        <geom mesh="scene_part_031" class="scene_collision"/>
+        <geom mesh="scene_part_032" class="scene_collision"/>
+        <geom mesh="scene_part_033" class="scene_collision"/>
+        <geom mesh="scene_part_034" class="scene_collision"/>
+        <geom mesh="scene_part_035" class="scene_collision"/>
+        <geom mesh="scene_part_036" class="scene_collision"/>
+        <geom mesh="scene_part_037" class="scene_collision"/>
+        <geom mesh="scene_part_038" class="scene_collision"/>
+        <geom mesh="scene_part_039" class="scene_collision"/>
+        <geom mesh="scene_part_040" class="scene_collision"/>
+        <geom mesh="scene_part_041" class="scene_collision"/>
+        <geom mesh="scene_part_042" class="scene_collision"/>
+        <geom mesh="scene_part_043" class="scene_collision"/>
+        <geom mesh="part_044_part_0" class="scene_collision"/>
+        <geom mesh="part_044_part_1" class="scene_collision"/>
+        <geom mesh="part_044_part_2" class="scene_collision"/>
+        <geom mesh="scene_part_045" class="scene_collision"/>
+        <geom mesh="scene_part_046" class="scene_collision"/>
+        <geom mesh="scene_part_047" class="scene_collision"/>
+        <geom mesh="part_048_part_0" class="scene_collision"/>
+        <geom mesh="part_048_part_1" class="scene_collision"/>
+        <geom mesh="part_049_part_0" class="scene_collision"/>
+        <geom mesh="part_049_part_1" class="scene_collision"/>
+        <geom mesh="part_049_part_2" class="scene_collision"/>
+        <geom mesh="scene_part_054" class="scene_collision"/>
+        <geom mesh="scene_part_055" class="scene_collision"/>
+        <geom mesh="parts_056_part_0" class="scene_collision"/>
+        <geom mesh="parts_056_part_1" class="scene_collision"/>
+        <geom mesh="parts_056_part_2" class="scene_collision"/>
+        <geom mesh="parts_056_part_3" class="scene_collision"/>
+        <geom mesh="parts_056_part_4" class="scene_collision"/>
+        <geom mesh="parts_056_part_5" class="scene_collision"/>
+        <geom mesh="parts_056_part_6" class="scene_collision"/>
+        <geom mesh="parts_056_part_7" class="scene_collision"/>
+        <geom mesh="parts_056_part_8" class="scene_collision"/>
+        <geom mesh="parts_056_part_9" class="scene_collision"/>
+        <geom mesh="parts_056_part_10" class="scene_collision"/>
+        <geom mesh="parts_056_part_11" class="scene_collision"/>
+        <geom mesh="parts_056_part_12" class="scene_collision"/>
+        <geom mesh="parts_056_part_13" class="scene_collision"/>
+        <geom mesh="parts_056_part_14" class="scene_collision"/>
+        <geom mesh="parts_056_part_15" class="scene_collision"/>
+        <geom mesh="parts_056_part_16" class="scene_collision"/>
+        <geom mesh="parts_056_part_17" class="scene_collision"/>
+        <geom mesh="parts_056_part_18" class="scene_collision"/>
+        <geom mesh="parts_056_part_19" class="scene_collision"/>
+        <geom mesh="parts_056_part_20" class="scene_collision"/>
+        <geom mesh="parts_056_part_21" class="scene_collision"/>
+        <geom mesh="parts_056_part_22" class="scene_collision"/>
+        <geom mesh="parts_056_part_23" class="scene_collision"/>
+        <geom mesh="parts_056_part_24" class="scene_collision"/>
+        <geom mesh="parts_056_part_25" class="scene_collision"/>
+        <geom mesh="parts_056_part_26" class="scene_collision"/>
+        <geom mesh="parts_056_part_27" class="scene_collision"/>
+        <geom mesh="parts_056_part_28" class="scene_collision"/>
+        <geom mesh="parts_056_part_29" class="scene_collision"/>
+        <geom mesh="parts_056_part_30" class="scene_collision"/>
+        <geom mesh="parts_056_part_31" class="scene_collision"/>
+        <geom mesh="parts_056_part_32" class="scene_collision"/>
+        <geom mesh="parts_056_part_33" class="scene_collision"/>
+        <geom mesh="parts_056_part_34" class="scene_collision"/>
+        <geom mesh="parts_056_part_35" class="scene_collision"/>
+        <geom mesh="parts_056_part_36" class="scene_collision"/>
+        <geom mesh="parts_056_part_37" class="scene_collision"/>
+        <geom mesh="parts_056_part_38" class="scene_collision"/>
+        <geom mesh="parts_056_part_39" class="scene_collision"/>
+        <geom mesh="parts_056_part_40" class="scene_collision"/>
+        <geom mesh="parts_056_part_41" class="scene_collision"/>
+        <geom mesh="parts_056_part_42" class="scene_collision"/>
+        <geom mesh="parts_056_part_43" class="scene_collision"/>
+        <geom mesh="parts_056_part_44" class="scene_collision"/>
+        <geom mesh="parts_056_part_45" class="scene_collision"/>
+        <geom mesh="parts_056_part_46" class="scene_collision"/>
+        <geom mesh="parts_056_part_47" class="scene_collision"/>
+        <geom mesh="parts_056_part_48" class="scene_collision"/>
+        <geom mesh="parts_056_part_49" class="scene_collision"/>
       </body>
     </body>
   </worldbody>

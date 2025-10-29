@@ -2,163 +2,163 @@
 
     <body name="kfs_red_R1_00" pos="1.8 -1.9 0.38">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_01" material="kfs_R1_KFS_red" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_01" material="kfs_R1_KFS_red" />
     </body>
     <body name="kfs_red_01" pos="-0.6 -1.9 0.78">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_03" material="kfs_redR015" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_03" material="kfs_redR015" />
     </body>
     <body name="kfs_red_02" pos="-1.8 -1.9 0.58">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_04" material="kfs_redR014" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_04" material="kfs_redR014" />
     </body>
     <body name="kfs_red_03" pos="0.6 -3.1 0.78">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_05" material="kfs_redR013" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_05" material="kfs_redR013" />
     </body>
     <body name="kfs_red_04" pos="1.8 -3.1 0.58">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_06" material="kfs_redR012" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_06" material="kfs_redR012" />
     </body>
     <body name="kfs_red_05" pos="-0.6 -3.1 0.58">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_07" material="kfs_redR011" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_07" material="kfs_redR011" />
     </body>
     <body name="kfs_red_06" pos="-1.8 -3.1 0.38">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_08" material="kfs_redR010" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_08" material="kfs_redR010" />
     </body>
     <body name="kfs_red_07" pos="1.8 -4.3 0.38">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_09" material="kfs_redR009" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_09" material="kfs_redR009" />
     </body>
     <body name="kfs_red_08" pos="0.6 -1.9 0.58">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_10" material="kfs_redR008" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_10" material="kfs_redR008" />
     </body>
     <body name="kfs_red_09" pos="0.6 -4.3 0.58">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_11" material="kfs_redR007" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_11" material="kfs_redR007" />
     </body>
     <body name="kfs_red_10" pos="-0.6 -4.3 0.38">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_12" material="kfs_redR006" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_12" material="kfs_redR006" />
     </body>
     <body name="kfs_red_11" pos="-1.8 -4.3 0.58">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_13" material="kfs_redR005" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_13" material="kfs_redR005" />
     </body>
     <body name="kfs_red_12" pos="7 -2 0.2">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_14" material="kfs_redR004" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_14" material="kfs_redR004" />
     </body>
     <body name="kfs_red_13" pos="7 -2.5 0.2">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_15" material="kfs_redR003" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_15" material="kfs_redR003" />
     </body>
     <body name="kfs_red_14" pos="7 -3 0.2">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_16" material="kfs_redR002" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_16" material="kfs_redR002" />
     </body>
     <body name="kfs_red_15" pos="7 -3.5 0.2">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_17" material="kfs_redR001" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_17" material="kfs_redR001" />
     </body>
     <body name="kfs_blue_R1_00" pos="1.8 1.9 0.38">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_00" material="kfs_R1_KFS_blue" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_00" material="kfs_R1_KFS_blue" />
     </body>
     <body name="kfs_blue_01" pos="0.6 1.9 0.58">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_18" material="kfs_blueR015" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_18" material="kfs_blueR015" />
     </body>
     <body name="kfs_blue_02" pos="-0.6 1.9 0.78">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_19" material="kfs_blueR014" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_19" material="kfs_blueR014" />
     </body>
     <body name="kfs_blue_03" pos="-1.8 1.9 0.58">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_20" material="kfs_blueR013" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_20" material="kfs_blueR013" />
     </body>
     <body name="kfs_blue_04" pos="0.6 3.1 0.78">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_21" material="kfs_blueR012" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_21" material="kfs_blueR012" />
     </body>
     <body name="kfs_blue_05" pos="1.8 3.1 0.58">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_22" material="kfs_blueR011" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_22" material="kfs_blueR011" />
     </body>
     <body name="kfs_blue_06" pos="-0.6 3.1 0.58">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_23" material="kfs_blueR010" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_23" material="kfs_blueR010" />
     </body>
     <body name="kfs_blue_07" pos="-1.8 3.1 0.38">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_24" material="kfs_blueR009" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_24" material="kfs_blueR009" />
     </body>
     <body name="kfs_blue_08" pos="1.8 4.3 0.38">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_25" material="kfs_blueR008" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_25" material="kfs_blueR008" />
     </body>
     <body name="kfs_blue_09" pos="0.6 4.3 0.58">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_26" material="kfs_blueR007" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_26" material="kfs_blueR007" />
     </body>
     <body name="kfs_blue_10" pos="-0.6 4.3 0.38">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_27" material="kfs_blueR006" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_27" material="kfs_blueR006" />
     </body>
     <body name="kfs_blue_11" pos="-1.8 4.3 0.58">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_28" material="kfs_blueR005" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_28" material="kfs_blueR005" />
     </body>
     <body name="kfs_blue_12" pos="7 2 0.2">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_29" material="kfs_blueR004" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_29" material="kfs_blueR004" />
     </body>
     <body name="kfs_blue_13" pos="7 2.5 0.2">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_30" material="kfs_blueR003" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_30" material="kfs_blueR003" />
     </body>
     <body name="kfs_blue_14" pos="7 3 0.2">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_31" material="kfs_blueR002" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_31" material="kfs_blueR002" />
     </body>
     <body name="kfs_blue_15" pos="7 3.5 0.2">
       <joint type="free" damping="1e-4"/>
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.0002 0.0002 0.0002" />
-      <geom group="1" class="collision" mesh="kfs_32" material="kfs_blueR001" />
+      <inertial pos="0 0 0" mass="0.01" diaginertia="0.002 0.002 0.002"/>
+      <geom group="1" class="scene_collision" mesh="kfs_32" material="kfs_blueR001" />
     </body>
 
 </mujocoinclude>
