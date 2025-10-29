@@ -5,7 +5,8 @@
         <geom contype="0" conaffinity="0" group="2"/>
       </default>
       <default class="collision">
-        <geom condim="3" contype="0" conaffinity="1" priority="1" group="3" solref="0.005 1" friction="1 0.01 0.01" type="mesh"/>
+        <!-- <geom condim="3" contype="0" conaffinity="1" priority="1" group="3" solref="0.005 1" friction="1 0.01 0.01" type="mesh"/> -->
+        <geom condim="3" priority="1" group="3" solimp="0.999 0.995 0.001" solref="0.01 1" friction="1 0.005 0.0001" type="mesh"/>
       </default>
     </default>
     <site size="0.001" group="3"/>
