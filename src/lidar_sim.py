@@ -107,7 +107,7 @@ def main():
 
     folder_path = os.path.dirname(os.path.abspath(__file__))
     cmd = f"rviz2 -d {folder_path}/rviz_config/lidar.rviz"
-    print(f"在终端执行命令以开启rviz可视化:\n {cmd}")
+    print(f"在终端执行命令以开启rviz可视化:\n{cmd}")
     print("=" * 60)
 
     mj_model = mujoco.MjModel.from_xml_path("../models/mjcf/mocap_env.xml")

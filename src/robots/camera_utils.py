@@ -1,5 +1,11 @@
 import numpy as np
 
+def get_site_tmat(mj_data, site_name):
+    tmat = np.eye(4)
+    tmat[:3,:3] = mj_data.site(site_name).xmat.reshape((3,3))
+    tmat[:3,3] = mj_data.site(site_name).xpos
+    return tmat
+
 def camera2k(fovy, width, height):
     cx = width / 2
     cy = height / 2
