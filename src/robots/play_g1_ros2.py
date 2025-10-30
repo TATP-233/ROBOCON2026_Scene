@@ -24,7 +24,7 @@ import threading
 from scipy.spatial.transform import Rotation
 
 from camera_utils import camera2k, get_site_tmat
-from play_go1_joystick import OnnxController
+from play_g1_joystick import OnnxController
 
 import rclpy
 import tf2_ros
@@ -36,31 +36,31 @@ from sensor_msgs.msg import Image, CameraInfo, Imu, PointCloud2, PointField
 from mujoco_lidar import MjLidarWrapper
 from mujoco_lidar import scan_gen
 
-# ti.init(arch=ti.gpu)
-
 _HERE = epath.Path(__file__).parent
 _ONNX_DIR = _HERE / "onnx"
-_MJCF_PATH = _HERE.parent.parent / "models" / "mjcf" / "scene_go1.xml"
+_MJCF_PATH = _HERE.parent.parent / "models" / "mjcf" / "scene_g1.xml"
 
-_JOINT_NUM = 12
+_JOINT_NUM = 29
 class OnnxControllerRos2(OnnxController, Node):
-    """ONNX controller for the Go-1 robot."""
+    """ONNX controller for the G-1 robot."""
 
     def __init__(
         self,
         mj_model: mujoco.MjModel,
         policy_path: str,
         default_angles: np.ndarray,
+        ctrl_dt: float,
         n_substeps: int,
         action_scale: float = 0.5,
     ):
         super().__init__(
             policy_path,
             default_angles,
+            ctrl_dt,
             n_substeps,
             action_scale
         )
-        Node.__init__(self, 'robocon_go1_node')
+        Node.__init__(self, 'robocon_g1_node')
 
         self.camera_width = 640
         self.camera_height = 480
@@ -76,7 +76,7 @@ class OnnxControllerRos2(OnnxController, Node):
 
         geomgroup = np.ones((mujoco.mjNGROUP,), dtype=np.ubyte)
         geomgroup[3:] = 0  # 排除group 1中的几何体
-        self.lidar = MjLidarWrapper(mj_model, site_name="lidar_front", backend="gpu", args={'bodyexclude': -1, "geomgroup":geomgroup})
+        self.lidar = MjLidarWrapper(mj_model, site_name="lidar", backend="gpu", args={'bodyexclude': -1, "geomgroup":geomgroup})
 
     def init_topic_publisher(self, mj_model):
         self.tf_broadcaster = tf2_ros.TransformBroadcaster(self)
@@ -119,7 +119,7 @@ class OnnxControllerRos2(OnnxController, Node):
 
         # 创建ROS2 PointCloud2消息
         pc_msg = PointCloud2()
-        pc_msg.header.frame_id = 'lidar_front'  # TODO "lidar"
+        pc_msg.header.frame_id = 'lidar'
         pc_msg.fields = fields
         pc_msg.is_bigendian = False
         pc_msg.point_step = 12  # 3 个 float32 (x,y,z)
@@ -157,7 +157,7 @@ class OnnxControllerRos2(OnnxController, Node):
         time_stamp = self.get_clock().now().to_msg()
         if not self.pub_staticc_tf_once:
             self.pub_staticc_tf_once = True
-            self.publish_static_transform(mj_data, 'imu', 'lidar_front')
+            self.publish_static_transform(mj_data, 'imu_in_pelvis', 'lidar')
         self.publish_camera_info(mj_data)
         self.publish_tf(mj_data, time_stamp)
         self.publish_imu(mj_data, time_stamp)
@@ -173,8 +173,6 @@ class OnnxControllerRos2(OnnxController, Node):
         self.last_pub_time_caminfo = mj_data.time
         self.head_color_info_puber.publish(self.head_color_info)
         self.head_depth_info_puber.publish(self.head_depth_info)
-
-        self.publish_static_transform(mj_data, "imu", "lidar_front")
     
     def publish_tf(self, mj_data, time_stamp):
         if self.last_pub_time_tf > mj_data.time:
@@ -187,14 +185,14 @@ class OnnxControllerRos2(OnnxController, Node):
         trans_msg = TransformStamped()
         trans_msg.header.stamp = time_stamp
         trans_msg.header.frame_id = "odom"
-        trans_msg.child_frame_id = "imu"
+        trans_msg.child_frame_id = "imu_in_pelvis"
         trans_msg.transform.translation.x = mj_data.sensor("position").data[0]
         trans_msg.transform.translation.y = mj_data.sensor("position").data[1]
         trans_msg.transform.translation.z = mj_data.sensor("position").data[2]
-        trans_msg.transform.rotation.w = mj_data.sensor("orientation").data[0]
-        trans_msg.transform.rotation.x = mj_data.sensor("orientation").data[1]
-        trans_msg.transform.rotation.y = mj_data.sensor("orientation").data[2]
-        trans_msg.transform.rotation.z = mj_data.sensor("orientation").data[3]
+        trans_msg.transform.rotation.w = mj_data.sensor("orientation_pelvis").data[0]
+        trans_msg.transform.rotation.x = mj_data.sensor("orientation_pelvis").data[1]
+        trans_msg.transform.rotation.y = mj_data.sensor("orientation_pelvis").data[2]
+        trans_msg.transform.rotation.z = mj_data.sensor("orientation_pelvis").data[3]
         self.tf_broadcaster.sendTransform(trans_msg)
 
     def publish_imu(self, mj_data, time_stamp):
@@ -206,16 +204,16 @@ class OnnxControllerRos2(OnnxController, Node):
         self.last_pub_time_imu = mj_data.time
 
         self.imu_msg.header.stamp = time_stamp
-        self.imu_msg.orientation.w = mj_data.sensor("orientation").data[0]
-        self.imu_msg.orientation.x = mj_data.sensor("orientation").data[1]
-        self.imu_msg.orientation.y = mj_data.sensor("orientation").data[2]
-        self.imu_msg.orientation.z = mj_data.sensor("orientation").data[3]
-        self.imu_msg.angular_velocity.x = mj_data.sensor("gyro").data[0]
-        self.imu_msg.angular_velocity.y = mj_data.sensor("gyro").data[1]
-        self.imu_msg.angular_velocity.z = mj_data.sensor("gyro").data[2]
-        self.imu_msg.linear_acceleration.x = mj_data.sensor("accelerometer").data[0]
-        self.imu_msg.linear_acceleration.y = mj_data.sensor("accelerometer").data[1]
-        self.imu_msg.linear_acceleration.z = mj_data.sensor("accelerometer").data[2]
+        self.imu_msg.orientation.w = mj_data.sensor("orientation_pelvis").data[0]
+        self.imu_msg.orientation.x = mj_data.sensor("orientation_pelvis").data[1]
+        self.imu_msg.orientation.y = mj_data.sensor("orientation_pelvis").data[2]
+        self.imu_msg.orientation.z = mj_data.sensor("orientation_pelvis").data[3]
+        self.imu_msg.angular_velocity.x = mj_data.sensor("gyro_pelvis").data[0]
+        self.imu_msg.angular_velocity.y = mj_data.sensor("gyro_pelvis").data[1]
+        self.imu_msg.angular_velocity.z = mj_data.sensor("gyro_pelvis").data[2]
+        self.imu_msg.linear_acceleration.x = mj_data.sensor("accelerometer_pelvis").data[0]
+        self.imu_msg.linear_acceleration.y = mj_data.sensor("accelerometer_pelvis").data[1]
+        self.imu_msg.linear_acceleration.z = mj_data.sensor("accelerometer_pelvis").data[2]
         self.imu_puber.publish(self.imu_msg)
 
     def publish_images(self, mj_data, time_stamp):
@@ -270,14 +268,15 @@ def load_callback(model=None, data=None):
     mujoco.mj_resetDataKeyframe(model, data, 0)
 
     ctrl_dt = 0.02
-    sim_dt = 0.004
+    sim_dt = 0.002
     n_substeps = int(round(ctrl_dt / sim_dt))
     model.opt.timestep = sim_dt
 
     policy = OnnxControllerRos2(
         model,
-        policy_path=(_ONNX_DIR / "go1_policy.onnx").as_posix(),
-        default_angles=np.array(model.keyframe("home_red").qpos[7:7+_JOINT_NUM]),
+        policy_path=(_ONNX_DIR / "g1_policy.onnx").as_posix(),
+        default_angles=np.array(model.keyframe("knees_bent").qpos[7:7+_JOINT_NUM]),
+        ctrl_dt=ctrl_dt,
         n_substeps=n_substeps,
         action_scale=0.5,
     )
@@ -294,7 +293,7 @@ if __name__ == "__main__":
 
     print("=" * 60)
     folder_path = os.path.dirname(os.path.abspath(__file__))
-    cmd = f"rviz2 -d {folder_path}/../rviz_config/go1.rviz"
+    cmd = f"rviz2 -d {folder_path}/../rviz_config/g1.rviz"
     print(f"在终端执行命令以开启rviz可视化:\n{cmd}")
     print("=" * 60)
 
