@@ -27,7 +27,8 @@ python -m mujoco.viewer --mjcf models/mjcf/robocon2026_old.xml
 
 ## 激光雷达模拟
 
-请先按照[LiDAR安装教程](https://github.com/TATP-233/MuJoCo-LiDAR/blob/main/README_zh.md#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85)，安装好lidar模拟环境（推荐使用gpu后端）
+1. 请先按照[LiDAR安装教程](https://github.com/TATP-233/MuJoCo-LiDAR/blob/main/README_zh.md#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85)，安装好lidar模拟环境（推荐使用gpu后端）
+2. 安装好ros2环境
 
 ```bash
 cd ROBOCON2026_Scene
@@ -38,6 +39,37 @@ python src/lidar_sim.py
 ```
 
 <img src="./assets/lidar_sim.png" alt="image-lidar_sim" style="zoom:50%;" />
+
+## 机器人运动控制模拟
+
+我们提供了几种不同类型的机器人的运控算法，包括宇树Go1、G1，本末Tita-V2。提供源码安装和docker两种形式。
+
+### Unitree Go1
+
+```bash
+pip install onnxruntime pygame
+
+# 使用手柄控制机器狗运动，推荐使用xbox手柄
+python3 src/robots/play_go1_joystick.py
+
+# 发布ros2 topic（需要先安装好ros2）
+python3 src/robots/play_go1_ros2.py
+```
+
+### Unitree G1
+
+```bash
+# 使用手柄控制运动，推荐使用xbox手柄
+python3 src/robots/play_g1_joystick.py
+
+# 发布ros2 topic（需要先安装好ros2）
+python3 src/robots/play_g1_ros2.py
+```
+
+
+### TITA-V2
+
+<!-- TODO -->
 
 ## 文件结构
 ```
