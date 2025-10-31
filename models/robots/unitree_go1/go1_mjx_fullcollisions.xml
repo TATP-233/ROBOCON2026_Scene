@@ -26,7 +26,7 @@
         <position forcerange="-35.55 35.55"/>
       </default>
       <default class="visual">
-        <geom type="mesh" contype="0" conaffinity="0" group="2" material="dark"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="0" material="dark"/>
       </default>
       <default class="collision">
         <geom group="3" type="capsule"/>

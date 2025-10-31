@@ -30,9 +30,7 @@ from gamepad_reader import joystick_process_main
 
 _HERE = epath.Path(__file__).parent
 _ONNX_DIR = _HERE / "onnx" / "sf_tron_a1"
-_MJCF_PATH = _HERE.parent.parent / "models" / "mjcf" / "scene_a1.xml"
-
-_JOINT_NUM = 8
+_MJCF_PATH = _HERE.parent.parent / "models" / "mjcf" / "scene_tron.xml"
 
 class OnnxSolefootController:
     """ONNX controller for the Solefoot robot."""

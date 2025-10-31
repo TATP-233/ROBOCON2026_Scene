@@ -2,7 +2,7 @@
 
 第二十五届全国大学生机器人大赛ROBOCON"武林探秘"竞技赛MuJoCo仿真环境。
 
-<img src="assets/image.jpg" alt="场景预览" style="zoom:50%;" />
+<img src="assets/family.png" alt="场景预览" style="zoom:50%;" />
 
 ## 快速开始
 
@@ -42,58 +42,137 @@ python src/lidar_sim.py
 
 ## 机器人运动控制模拟
 
-我们提供了几种不同类型的机器人的运控算法，包括宇树Go1、G1，本末Tita-V2。提供源码安装和docker两种形式。
+我们基于强化学习训练的 ONNX 策略模型，提供了多款主流机器人的运动控制仿真，支持手柄实时交互控制和 ROS2 接口集成。目前支持的机器人包括：
 
-### Unitree Go1
+- **宇树科技**：Go1 四足机器人、G1 人形机器人
+- **Booster机器人**：T1 双足人形机器人
+- **逐级动力**：Tron A1 双足机器人
+
+### 环境准备
+
+在运行任何机器人控制程序前，请先安装必要的依赖：
 
 ```bash
-pip install onnxruntime pygame
+# 安装 ONNX 运行时和游戏手柄支持
+pip install onnxruntime pygame etils
 
-# 使用手柄控制机器狗运动，推荐使用xbox手柄
+# （可选）安装 ROS2 支持，用于话题发布
+# 请参考 ROS2 官方文档安装对应版本
+```
+
+### Unitree Go1 四足机器人
+
+<!-- Go1 演示图片 -->
+<img src="assets/go1_demo.png" alt="Go1 运动演示" style="zoom:50%;" />
+
+```bash
+# 手柄控制模式（推荐使用 Xbox 手柄）
 python3 src/robots/play_go1_joystick.py
 
-# 发布ros2 topic（需要先安装好ros2）
+# ROS2 话题模式（需要先安装 ROS2）
 python3 src/robots/play_go1_ros2.py
 ```
 
-### Unitree G1
+**控制说明**：
+- 左摇杆：前后左右移动
+- 右摇杆：原地旋转
+- 按键 A/B/X/Y：切换步态模式
+
+### Unitree G1 人形机器人
+
+<!-- G1 演示图片 -->
+<img src="assets/g1_demo.png" alt="G1 运动演示" style="zoom:50%;" />
 
 ```bash
-# 使用手柄控制运动，推荐使用xbox手柄
+# 手柄控制模式
 python3 src/robots/play_g1_joystick.py
 
-# 发布ros2 topic（需要先安装好ros2）
+# ROS2 话题模式
 python3 src/robots/play_g1_ros2.py
 ```
 
+**控制说明**：
+- 左摇杆：行走方向控制
+- 右摇杆：身体姿态调整
+- 扳机键：步行速度调节
 
-### TITA-V2
+### Booster T1 双足人形机器人
 
-<!-- TODO -->
+Booster T1 是一款高动态双足人形机器人，专注于快速行走和跑步能力。
+
+<!-- T1 演示图片 -->
+<img src="assets/t1_demo.png" alt="T1 运动演示" style="zoom:50%;" />
+
+```bash
+# 手柄控制模式
+python3 src/robots/play_t1_joystick.py
+```
+
+**控制说明**：
+- 左摇杆：移动速度与方向
+- 右摇杆：转向控制
+- 肩键：姿态高度调整
+
+### Tron 双足机器人
+
+<!-- A1 演示图片 -->
+<img src="assets/tron_demo.png" alt="Tron 运动演示" style="zoom:50%;" />
+
+```bash
+# 手柄控制模式
+python3 src/robots/play_tron_joystick.py
+```
+
+**控制说明**：
+- 左摇杆：前进后退
+- 右摇杆：转向
+
+### 常见问题
+
+**Q: 手柄无法识别？**  
+A: 请确保手柄已连接并安装 `pygame`。运行 `python -m pygame.examples.joystick` 测试手柄连接。
+
+**Q: 如何自定义机器人模型？**  
+A: 修改 `models/mjcf/` 目录下对应的 XML 文件，并重新训练策略模型。
 
 ## 文件结构
 ```
 ROBOCON2026_Scene/
-├── README.md                   # 项目说明文档
-├── assets/                     # 资源文件
-│   └── image.png               # 场景预览图
+├── README.md                       # 项目说明文档
+├── assets/                         # 资源文件
 ├── models/
-│   ├── meshes/                 # 3D模型文件
-│   │   ├── kfs                 # 武功秘籍
-│   │   ├── robocon2026.obj     # 主场景模型
-│   │   ├── robocon2026.mtl     # 材质文件
-│   │   ├── parts/              # 场景部件模型
-│   │   └── visual/             # 可视化资源
-│   └── mjcf/
-│       ├── kfs.xml             # 武功秘籍
-│       ├── kfs_dep.xml         # 武功秘籍资产依赖
-│       ├── mocap_env.xml       # 用于显示激光雷达场景
-│       ├── robocon2026.xml     # MuJoCo场景描述文件
-│       └── robocon2026_old.xml # 适用于旧版mujoco
-├── src
-│   ├── lidar_sim.py            # 激光雷达模拟脚本
-│   └── rviz_config             # rviz配置文件
-│       └── rviz2_config.rviz
+│   ├── meshes/                     # 3D 模型文件
+│   │   ├── kfs/                    # 武功秘籍模型
+│   │   ├── robocon2026.obj         # 主场景模型
+│   │   ├── robocon2026.mtl         # 材质文件
+│   │   ├── parts/                  # 场景部件模型
+│   │   └── visual/                 # 可视化资源
+│   └── mjcf/                       # MuJoCo XML 场景文件
+│       ├── robocon2026.xml         # 主场景（MuJoCo >= 3.3.0）
+│       ├── robocon2026_old.xml     # 兼容旧版本 MuJoCo
+│       ├── mocap_env.xml           # 激光雷达仿真场景
+│       ├── kfs.xml                 # 武功秘籍场景
+│       ├── kfs_dep.xml             # 武功秘籍资产依赖
+│       ├── scene_go1.xml           # Go1 机器人场景
+│       ├── scene_g1.xml            # G1 机器人场景
+│       ├── scene_t1.xml            # T1 机器人场景
+│       └── scene_a1.xml            # A1 机器人场景
+├── src/
+│   ├── lidar_sim.py                # 激光雷达模拟脚本
+│   ├── robots/                     # 机器人控制脚本
+│   │   ├── play_go1_joystick.py    # Go1 手柄控制
+│   │   ├── play_go1_ros2.py        # Go1 ROS2 接口
+│   │   ├── play_g1_joystick.py     # G1 手柄控制
+│   │   ├── play_g1_ros2.py         # G1 ROS2 接口
+│   │   ├── play_t1_joystick.py     # T1 手柄控制
+│   │   ├── play_a1_joystick.py     # A1 手柄控制
+│   │   ├── gamepad_reader.py       # 游戏手柄读取模块
+│   │   ├── camera_utils.py         # 相机工具模块
+│   │   └── onnx/                   # ONNX 策略模型文件
+│   └── rviz_config/                # RViz 配置文件
+│       ├── g1.rviz
+│       ├── go1.rviz
+│       └── lidar.rviz
 └── 第二十五届全国大学生机器人大赛ROBOCON_u201C武林探秘_u201D竞技赛规则V.1.pdf
 ```
 
@@ -103,4 +182,7 @@ ROBOCON2026_Scene/
 
 ## 致谢
 
-感谢重庆邮电大学开源的[blender模型](https://rcbbs.top/t/topic/2261)。
+感谢以下项目和贡献者：
+
+- 感谢重庆邮电大学开源的[场景 Blender 模型](https://rcbbs.top/t/topic/2261)
+- 感谢 DeepMind [MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground) 提供的机器人运动控制策略和实现参考

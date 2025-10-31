@@ -40,7 +40,7 @@
       <geom condim="1" contype="0" conaffinity="0" material="medium_gray"/>
       <site rgba="1 0 0 1" size="0.01" group="5"/>
       <default class="visual">
-        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="0"/>
       </default>
       <default class="collision">
         <geom group="3"/>
