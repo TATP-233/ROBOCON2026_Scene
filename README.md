@@ -74,9 +74,9 @@ python3 src/robots/play_go1_ros2.py
 ```
 
 **控制说明**：
-- 左摇杆：前后左右移动
-- 右摇杆：原地旋转
-- 按键 A/B/X/Y：切换步态模式
+- `左摇杆`：前后左右移动
+- `右摇杆`：原地旋转
+- `Backspace`: 重置环境
 
 ### Unitree G1 人形机器人
 
@@ -91,11 +91,6 @@ python3 src/robots/play_g1_joystick.py
 python3 src/robots/play_g1_ros2.py
 ```
 
-**控制说明**：
-- 左摇杆：行走方向控制
-- 右摇杆：身体姿态调整
-- 扳机键：步行速度调节
-
 ### Booster T1 双足人形机器人
 
 <!-- T1 演示图片 -->
@@ -106,11 +101,6 @@ python3 src/robots/play_g1_ros2.py
 python3 src/robots/play_t1_joystick.py
 ```
 
-**控制说明**：
-- 左摇杆：移动速度与方向
-- 右摇杆：转向控制
-- 肩键：姿态高度调整
-
 ### Tron 双足机器人
 
 <!-- A1 演示图片 -->
@@ -120,11 +110,6 @@ python3 src/robots/play_t1_joystick.py
 # 手柄控制模式
 python3 src/robots/play_tron_joystick.py
 ```
-
-**控制说明**：
-- `左摇杆`：前进后退
-- `右摇杆`：转向
-- `Backspace`: 重置环境
 
 玩的开心！
 
