@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.8.0-devel-ubuntu22.04
+FROM nvidia/cuda:12.0.0-devel-ubuntu22.04
 
 ENV NVIDIA_DRIVER_CAPABILITIES=all
 ENV PYTHON_VERSION=3.10
@@ -38,10 +38,14 @@ RUN mkdir -p /usr/share/glvnd/egl_vendor.d/ && \
    echo '{\n    "file_format_version" : "1.0.0",\n    "ICD" : {\n        "library_path" : "libEGL_nvidia.so.0"\n    }\n}' > /usr/share/glvnd/egl_vendor.d/10_nvidia.json
 
 RUN apt-get install -y \
+    wget \
+    sudo \
     x11-apps \
     mesa-utils \
     vim \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
+
+WORKDIR /root
 
 CMD ["/bin/bash"]

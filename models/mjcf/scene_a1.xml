@@ -1,0 +1,10 @@
+<mujoco>
+  <!-- <compiler angle="radian" meshdir="../meshes/" texturedir="../meshes/" autolimits="true"/> -->
+
+  <include file="../robots/tron_a1/sf_a1.xml"/>
+  <include file="robocon2026.xml"/>
+
+  <keyframe>
+  </keyframe>
+
+</mujoco>
