@@ -98,8 +98,6 @@ python3 src/robots/play_g1_ros2.py
 
 ### Booster T1 双足人形机器人
 
-Booster T1 是一款高动态双足人形机器人，专注于快速行走和跑步能力。
-
 <!-- T1 演示图片 -->
 <img src="assets/t1_demo.png" alt="T1 运动演示" style="zoom:50%;" />
 
@@ -124,8 +122,11 @@ python3 src/robots/play_tron_joystick.py
 ```
 
 **控制说明**：
-- 左摇杆：前进后退
-- 右摇杆：转向
+- `左摇杆`：前进后退
+- `右摇杆`：转向
+- `Backspace`: 重置环境
+
+玩的开心！
 
 ### 常见问题
 
