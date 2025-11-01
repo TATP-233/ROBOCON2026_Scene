@@ -60,23 +60,39 @@ pip install onnxruntime pygame etils
 # 请参考 ROS2 官方文档安装对应版本
 ```
 
-### Unitree Go1 四足机器人
+### Unitree Go2 四足机器人
 
-<!-- Go1 演示图片 -->
-<img src="assets/go1_demo.png" alt="Go1 运动演示" style="zoom:50%;" />
+<!-- Go2 演示图片 -->
+<img src="assets/go2_demo.png" alt="Go2 运动演示" style="zoom:50%;" />
 
 ```bash
 # 手柄控制模式（推荐使用 Xbox 手柄）
-python3 src/robots/play_go1_joystick.py
+python3 src/robots/play_go2_joystick.py
 
 # ROS2 话题模式（需要先安装 ROS2）
-python3 src/robots/play_go1_ros2.py
+python3 src/robots/play_go2_ros2.py
+
+# 指定激光雷达类型，我们提供了ariy96和mid360两种激光雷达（默认使用ariy96）
+python3 src/robots/play_go2_ros2.py --lidar mid360
 ```
 
 **控制说明**：
 - `左摇杆`：前后左右移动
 - `右摇杆`：原地旋转
 - `Backspace`: 重置环境
+
+### Unitree Go1 四足机器人
+
+<!-- Go1 演示图片 -->
+<img src="assets/go1_demo.png" alt="Go1 运动演示" style="zoom:50%;" />
+
+```bash
+# 手柄控制模式
+python3 src/robots/play_go1_joystick.py
+
+# ROS2 话题模式
+python3 src/robots/play_go1_ros2.py
+```
 
 ### Unitree G1 人形机器人
 
