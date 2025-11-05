@@ -72,7 +72,7 @@ python3 src/robots/play_go2_joystick.py
 # ROS2 话题模式（需要先安装 ROS2）
 python3 src/robots/play_go2_ros2.py
 
-# 指定激光雷达类型，我们提供了ariy96和mid360两种激光雷达（默认使用ariy96）
+# 指定激光雷达类型，我们提供了airy96和mid360两种激光雷达（默认使用airy96）
 python3 src/robots/play_go2_ros2.py --lidar mid360
 ```
 

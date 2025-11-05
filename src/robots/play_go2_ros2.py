@@ -77,6 +77,8 @@ class OnnxControllerRos2(OnnxController, Node):
             self.livox_generator = scan_gen.LivoxGenerator(lidar_type)
             self.rays_theta, self.rays_phi = self.livox_generator.sample_ray_angles()
             self.dynamic_lidar = True
+        else:
+            raise ValueError(f"Unknown lidar type: {lidar_type}")
 
         self.rays_theta = np.ascontiguousarray(self.rays_theta).astype(np.float32)[::3]
         self.rays_phi = np.ascontiguousarray(self.rays_phi).astype(np.float32)[::3]
@@ -302,15 +304,40 @@ def load_callback(model=None, data=None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='MuJoCo LiDAR可视化与ROS2集成')
-    parser.add_argument('--lidar', type=str, default='ariy', help='LiDAR型号 (ariy, mid360)', choices=['ariy', 'mid360'])
+    parser.add_argument('--lidar', type=str, default='airy', help='LiDAR型号 (airy, mid360)', choices=['airy', 'mid360'])
     args = parser.parse_args()
 
     rclpy.init()
 
     print("=" * 60)
     folder_path = os.path.dirname(os.path.abspath(__file__))
-    cmd = f"rviz2 -d {folder_path}/../rviz_config/go2.rviz"
-    print(f"在终端执行命令以开启rviz可视化:\n{cmd}")
-    print("=" * 60)
+    rviz_config = os.path.join(folder_path, "../rviz_config/go2.rviz")
+    # 尝试自动启动 rviz2（非阻塞）。如果系统没有 rviz2 则打印提示。
+    import subprocess
+    import shutil
 
-    viewer.launch(loader=load_callback)
+    rviz_proc = None
+    rviz_exec = shutil.which("rviz2")
+    if rviz_exec is None:
+        print("rviz2 未找到，请手动安装或手动启动 rviz2 来查看话题。")
+    else:
+        try:
+            rviz_proc = subprocess.Popen([rviz_exec, "-d", rviz_config])
+            print(f"启动 rviz2 (pid={rviz_proc.pid})，使用配置: {rviz_config}")
+        except Exception as e:
+            print(f"自动启动 rviz2 失败: {e}")
+
+    try:
+        viewer.launch(loader=load_callback)
+    finally:
+        # 仿真退出时尝试优雅关闭 rviz2
+        if rviz_proc is not None:
+            try:
+                if rviz_proc.poll() is None:
+                    rviz_proc.terminate()
+                    rviz_proc.wait(timeout=2)
+            except Exception:
+                try:
+                    rviz_proc.kill()
+                except Exception:
+                    pass

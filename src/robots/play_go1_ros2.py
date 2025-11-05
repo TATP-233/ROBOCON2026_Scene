@@ -294,8 +294,31 @@ if __name__ == "__main__":
 
     print("=" * 60)
     folder_path = os.path.dirname(os.path.abspath(__file__))
-    cmd = f"rviz2 -d {folder_path}/../rviz_config/go1.rviz"
-    print(f"在终端执行命令以开启rviz可视化:\n{cmd}")
-    print("=" * 60)
+    rviz_config = os.path.join(folder_path, "../rviz_config/go1.rviz")
+    import subprocess
+    import shutil
 
-    viewer.launch(loader=load_callback)
+    rviz_proc = None
+    rviz_exec = shutil.which("rviz2")
+    if rviz_exec is None:
+        print("rviz2 未找到，请手动安装或手动启动 rviz2 来查看话题。")
+    else:
+        try:
+            rviz_proc = subprocess.Popen([rviz_exec, "-d", rviz_config])
+            print(f"启动 rviz2 (pid={rviz_proc.pid})，使用配置: {rviz_config}")
+        except Exception as e:
+            print(f"自动启动 rviz2 失败: {e}")
+
+    try:
+        viewer.launch(loader=load_callback)
+    finally:
+        if rviz_proc is not None:
+            try:
+                if rviz_proc.poll() is None:
+                    rviz_proc.terminate()
+                    rviz_proc.wait(timeout=2)
+            except Exception:
+                try:
+                    rviz_proc.kill()
+                except Exception:
+                    pass
