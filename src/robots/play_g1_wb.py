@@ -15,6 +15,7 @@
 """Deploy an MJX policy in ONNX format to C MuJoCo and play with it."""
 
 from etils import epath
+import collections
 import mujoco
 import mujoco.viewer as viewer
 import numpy as np
@@ -36,26 +37,39 @@ class OnnxController:
         self,
         policy_path: str,
         default_angles: np.ndarray,
-        ctrl_dt: float,
         n_substeps: int,
-        action_scale: float = 0.5,
     ):
-        self._output_names = ["continuous_actions"]
         self._policy = rt.InferenceSession(
             policy_path, providers=["CPUExecutionProvider"]
         )
-        self.target_height = 0
+        self._input_name = self._policy.get_inputs()[0].name
+        self._output_name = self._policy.get_outputs()[0].name
 
-        self._action_scale = action_scale
         self._default_angles = default_angles
-        self._last_action = np.zeros_like(default_angles, dtype=np.float32)
+
+        self._num_actions = 12
+        self._last_action = np.zeros((self._num_actions, ), dtype=np.float32)
+        self._num_single_obs = 76  # command(4) + gyro(3) + gravity(3) + joint_pos(27) + joint_vel(27) + last_action(12)
+        self._obs_history_len = 6
+        self._num_obs = self._num_single_obs * self._obs_history_len  # 76 * 6 (observation dimension * history length)
+
+        self.obs = np.zeros(self._num_obs, dtype=np.float32)
+        self.obs_history = collections.deque(maxlen=self._obs_history_len)
+        for _ in range(self._obs_history_len):
+            self.obs_history.append(np.zeros(self._num_single_obs, dtype=np.float32))
 
         self._counter = 0
         self._n_substeps = n_substeps
 
-        self._phase = np.array([0.0, np.pi])
-        self._gait_freq = 1.5
-        self._phase_dt = 2 * np.pi * self._gait_freq * ctrl_dt
+        self._scale_command = np.array([2.0, 2.0, 0.25, 1.0], dtype=np.float32)
+        self._scale_gyro = 0.25
+        self._scale_dof_pos = 1.0
+        self._scale_dof_vel = 0.05
+        self._scale_action = 0.25
+
+        self._idx_dof = np.concatenate([list(range(13)), list(range(15, 29))])
+
+        self.target_height = 0.7
 
         self.joy_queue = mp.Queue(maxsize=1)
         joy_stop_event = mp.Event()
@@ -63,52 +77,52 @@ class OnnxController:
         self.joy_process.start()
         self.latest_axes, self.latest_buttons = None, None
 
-    def get_command(self, model, data) -> np.ndarray:
-        command = np.zeros(4, dtype=np.float32)
-        if not self.joy_queue is None:
-            try:
-                self.latest_axes, self.latest_buttons = self.joy_queue.get_nowait()
-                command[:3] = -np.array([self.latest_axes[1] * 1., self.latest_axes[0] * 0.5, self.latest_axes[3] * 0.8])
-                self.target_height += (self.latest_axes[2] - self.latest_axes[5]) * self._n_substeps * model.opt.timestep * 0.1
-                self.target_height = np.clip(self.target_height, 0.24, 0.74)
-                command[3] = self.target_height
-            except pyqueue.Empty:
-                pass
-        return command
-
     def get_obs(self, model, data) -> np.ndarray:
-        linvel = data.sensor("local_linvel_pelvis").data
         gyro = data.sensor("gyro_pelvis").data
         imu_xmat = data.site_xmat[model.site("imu_in_pelvis").id].reshape(3, 3)
         gravity = imu_xmat.T @ np.array([0, 0, -1])
         joint_angles = data.qpos[7:7+_JOINT_NUM] - self._default_angles
         joint_velocities = data.qvel[6:6+_JOINT_NUM]
-        phase = np.concatenate([np.cos(self._phase), np.sin(self._phase)])
 
-        command = self.get_command(model, data)
+        # homie uses a waist of 1 dof
+        _joint_angles = joint_angles[self._idx_dof]
+        _joint_velocities = joint_velocities[self._idx_dof]
+
+        command = np.zeros(4, dtype=np.float32)
+        if not self.joy_queue is None:
+            try:
+                self.latest_axes, self.latest_buttons = self.joy_queue.get_nowait()
+                command[:3] = -np.array([self.latest_axes[1] * 1., self.latest_axes[0] * 0.5, self.latest_axes[3] * 1 * np.pi])
+                self.target_height += (self.latest_axes[2] - self.latest_axes[5]) * self._n_substeps * model.opt.timestep * 0.1
+                self.target_height = np.clip(self.target_height, 0.1, 1.0)
+                command[3] = self.target_height
+            except pyqueue.Empty:
+                pass
 
         obs = np.hstack([
-            linvel,
-            gyro,
-            gravity,
-            command[:3],
-            joint_angles,
-            joint_velocities,
-            self._last_action,
-            phase,
+            command * self._scale_command,  # 0:4   4
+            gyro * self._scale_gyro,        # 4:7   3
+            gravity,                        # 7:10  3
+            _joint_angles * self._scale_dof_pos,         # 10:37 27
+            _joint_velocities * self._scale_dof_vel,     # 37:64 27
+            self._last_action,     # 64:76 12
         ])
         return obs.astype(np.float32)
 
     def get_control(self, model: mujoco.MjModel, data: mujoco.MjData) -> None:
         self._counter += 1
         if self._counter % self._n_substeps == 0:
-            obs = self.get_obs(model, data)
-            onnx_input = {"obs": obs.reshape(1, -1)}
-            onnx_pred = self._policy.run(self._output_names, onnx_input)[0][0]
+            single_obs = self.get_obs(model, data)
+            self.obs_history.append(single_obs)
+
+            for i, hist_obs in enumerate(self.obs_history):
+                start_idx = i * single_obs.shape[0]
+                end_idx = start_idx + single_obs.shape[0]
+                self.obs[start_idx:end_idx] = hist_obs
+            onnx_input = {self._input_name: self.obs.reshape(1, -1)}
+            onnx_pred = self._policy.run([self._output_name], onnx_input)[0][0]
             self._last_action = onnx_pred.copy()
-            data.ctrl[:] = onnx_pred * self._action_scale + self._default_angles
-            phase_tp1 = self._phase + self._phase_dt
-            self._phase = np.fmod(phase_tp1 + np.pi, 2 * np.pi) - np.pi
+            data.ctrl[:self._num_actions] = onnx_pred * self._scale_action + self._default_angles[:self._num_actions]
 
 def load_callback(model=None, data=None):
     mujoco.set_mjcb_control(None)
@@ -126,11 +140,9 @@ def load_callback(model=None, data=None):
     model.opt.timestep = sim_dt
 
     policy = OnnxController(
-        policy_path=(_ONNX_DIR / "g1_policy.onnx").as_posix(),
-        default_angles=np.array(model.keyframe("knees_bent").qpos[7:7+_JOINT_NUM]),
-        ctrl_dt=ctrl_dt,
+        policy_path=(_ONNX_DIR / "g1_wb_policy.onnx").as_posix(),
+        default_angles=np.array(model.keyframe("homie").qpos[7:7+_JOINT_NUM]),
         n_substeps=n_substeps,
-        action_scale=0.5,
     )
 
     mujoco.set_mjcb_control(policy.get_control)
