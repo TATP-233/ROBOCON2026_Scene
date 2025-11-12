@@ -28,17 +28,23 @@ python -m mujoco.viewer --mjcf models/mjcf/robocon2026_old.xml
 ## 激光雷达模拟
 
 1. 请先按照[LiDAR安装教程](https://github.com/TATP-233/MuJoCo-LiDAR/blob/main/README_zh.md#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85)，安装好lidar模拟环境（推荐使用gpu后端）
-2. 安装好ros2环境
 
 ```bash
 cd ROBOCON2026_Scene
-python src/lidar_sim.py
-# 参考终端的指令:
-# 1. 启动rviz2，可视化激光雷达点云
-# 2. 鼠标操作，拖动绿色方块，控制激光雷达的位置
+python src/lidar_sim_native.py
 ```
 
-<img src="./assets/lidar_sim.png" alt="image-lidar_sim" style="zoom:50%;" />
+<img src="./assets/lidar_sim_native.png" alt="image-lidar_sim" style="zoom:50%;" />
+
+
+2. 集成ros2，需要先安装好ros2环境
+
+```bash
+cd ROBOCON2026_Scene
+python src/lidar_sim_ros2.py
+```
+
+<img src="./assets/lidar_sim_ros2.png" alt="image-lidar_sim" style="zoom:50%;" />
 
 ## 机器人运动控制模拟
 

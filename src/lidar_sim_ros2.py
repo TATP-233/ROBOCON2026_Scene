@@ -3,6 +3,7 @@ import time
 import argparse
 import threading
 import traceback
+from etils import epath
 
 import mujoco
 import mujoco.viewer
@@ -106,11 +107,28 @@ def main():
     print("=" * 60)
 
     folder_path = os.path.dirname(os.path.abspath(__file__))
-    cmd = f"rviz2 -d {folder_path}/rviz_config/lidar.rviz"
-    print(f"在终端执行命令以开启rviz可视化:\n{cmd}")
-    print("=" * 60)
+    rviz_config = os.path.join(folder_path, "rviz_config/lidar.rviz")
+    
+    # 尝试自动启动 rviz2（非阻塞）
+    import subprocess
+    import shutil
 
-    mj_model = mujoco.MjModel.from_xml_path("../models/mjcf/mocap_env.xml")
+    rviz_proc = None
+    rviz_exec = shutil.which("rviz2")
+    if rviz_exec is None:
+        print("rviz2 未找到，请手动安装或手动启动 rviz2 来查看话题。")
+        print("=" * 60)
+    else:
+        try:
+            rviz_proc = subprocess.Popen([rviz_exec, "-d", rviz_config])
+            print(f"启动 rviz2 (pid={rviz_proc.pid})，使用配置: {rviz_config}")
+            print("=" * 60)
+        except Exception as e:
+            print(f"自动启动 rviz2 失败: {e}")
+            print("=" * 60)
+
+    mjcf_file = epath.Path(__file__).parent.parent / "models" / "mjcf" / "mocap_env.xml"
+    mj_model = mujoco.MjModel.from_xml_path(mjcf_file.as_posix())
     mj_data = mujoco.MjData(mj_model)
 
     # 初始化ROS2
@@ -180,6 +198,18 @@ def main():
         print(f"发生错误: {e}")
         traceback.print_exc()
     finally:
+        # 仿真退出时尝试优雅关闭 rviz2
+        if rviz_proc is not None:
+            try:
+                if rviz_proc.poll() is None:
+                    rviz_proc.terminate()
+                    rviz_proc.wait(timeout=2)
+            except Exception:
+                try:
+                    rviz_proc.kill()
+                except Exception:
+                    pass
+        
         spin_thread.join()
         node.destroy_node()
         rclpy.shutdown()
