@@ -2,9 +2,10 @@
 
 第二十五届全国大学生机器人大赛ROBOCON"武林探秘"竞技赛MuJoCo仿真环境。
 
+[English Document](README.md)
+
 <img src="assets/family.png" alt="场景预览" style="zoom:50%;" />
 
-[English Document](README.md)
 
 ## 快速开始
 

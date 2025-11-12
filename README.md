@@ -2,9 +2,10 @@
 
 MuJoCo simulation environment for the 25th National College Student Robot Competition ROBOCON "Martial Arts Quest".
 
+[中文文档](README_zh.md)
+
 <img src="assets/family.png" alt="Scene Preview" style="zoom:50%;" />
 
-[中文文档](README_zh.md)
 
 ## Quick Start
 
