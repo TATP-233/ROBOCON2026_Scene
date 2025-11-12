@@ -1,33 +1,35 @@
-# ROBOCON2026 武林探秘 - MuJoCo仿真场景
+# ROBOCON2026 Martial Arts Quest - MuJoCo Simulation Scene
 
-第二十五届全国大学生机器人大赛ROBOCON"武林探秘"竞技赛MuJoCo仿真环境。
+MuJoCo simulation environment for the 25th National College Student Robot Competition ROBOCON "Martial Arts Quest".
 
-<img src="assets/family.png" alt="场景预览" style="zoom:50%;" />
+<img src="assets/family.png" alt="Scene Preview" style="zoom:50%;" />
 
-## 快速开始
+[中文文档](README_zh.md)
 
-### 环境要求
+## Quick Start
+
+### Requirements
 - Python >= 3.7
-- MuJoCo物理引擎
+- MuJoCo Physics Engine
 
-### 安装依赖
+### Install Dependencies
 ```bash
 pip install mujoco
 ```
 
-### 启动仿真
+### Launch Simulation
 ```bash
-# 请检查自己的mujoco版本
+# Check your mujoco version
 pip list | grep mujoco
-# 如果是mujoco>=3.3.0 请使用以下的指令
+# If mujoco>=3.3.0, use the following command
 python -m mujoco.viewer --mjcf models/mjcf/robocon2026.xml
-# 如果是3.3.0之前的版本 则使用
+# If version is before 3.3.0, use
 python -m mujoco.viewer --mjcf models/mjcf/robocon2026_old.xml
 ```
 
-## 激光雷达模拟
+## LiDAR Simulation
 
-1. 请先按照[LiDAR安装教程](https://github.com/TATP-233/MuJoCo-LiDAR/blob/main/README_zh.md#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85)，安装好lidar模拟环境（推荐使用gpu后端）
+1. Please follow the [LiDAR Installation Tutorial](https://github.com/TATP-233/MuJoCo-LiDAR/blob/main/README_zh.md#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85) to set up the lidar simulation environment (GPU backend recommended)
 
 ```bash
 cd ROBOCON2026_Scene
@@ -37,7 +39,7 @@ python src/lidar_sim_native.py
 <img src="./assets/lidar_sim_native.png" alt="image-lidar_sim" style="zoom:50%;" />
 
 
-2. 集成ros2，需要先安装好ros2环境
+2. For ROS2 integration, please install ROS2 environment first
 
 ```bash
 cd ROBOCON2026_Scene
@@ -46,151 +48,165 @@ python src/lidar_sim_ros2.py
 
 <img src="./assets/lidar_sim_ros2.png" alt="image-lidar_sim" style="zoom:50%;" />
 
-## 机器人运动控制模拟
+## Robot Motion Control Simulation
 
-我们基于强化学习训练的 ONNX 策略模型，提供了多款主流机器人的运动控制仿真，支持手柄实时交互控制和 ROS2 接口集成。目前支持的机器人包括：
+Based on reinforcement learning trained ONNX policy models, we provide motion control simulations for multiple mainstream robots, supporting real-time joystick interaction control and ROS2 interface integration. Currently supported robots include:
 
-- **宇树科技**：Go1 四足机器人、G1 人形机器人
-- **Booster机器人**：T1 双足人形机器人
-- **逐级动力**：Tron A1 双足机器人
+- **Unitree Robotics**: Go1 Quadruped Robot, G1 Humanoid Robot
+- **Booster Robotics**: T1 Bipedal Humanoid Robot
+- **Zjupower**: Tron A1 Bipedal Robot
 
-### 环境准备
+### Environment Setup
 
-在运行任何机器人控制程序前，请先安装必要的依赖：
+Before running any robot control program, please install the necessary dependencies:
 
 ```bash
-# 安装 ONNX 运行时和游戏手柄支持
+# Install ONNX runtime and joystick support
 pip install onnxruntime pygame etils
 
-# （可选）安装 ROS2 支持，用于话题发布
-# 请参考 ROS2 官方文档安装对应版本
+# (Optional) Install ROS2 support for topic publishing
+# Please refer to ROS2 official documentation to install the corresponding version
 ```
 
-### Unitree Go2 四足机器人
+### Unitree Go2 Quadruped Robot
 
-<!-- Go2 演示图片 -->
-<img src="assets/go2_demo.png" alt="Go2 运动演示" style="zoom:50%;" />
+<!-- Go2 Demo Image -->
+<img src="assets/go2_demo.png" alt="Go2 Motion Demo" style="zoom:50%;" />
 
 ```bash
-# 手柄控制模式（推荐使用 Xbox 手柄）
+# Joystick control mode (Xbox controller recommended)
 python3 src/robots/play_go2_joystick.py
 
-# ROS2 话题模式（需要先安装 ROS2）
+# ROS2 topic mode (requires ROS2 installation)
 python3 src/robots/play_go2_ros2.py
 
-# 指定激光雷达类型，我们提供了airy96和mid360两种激光雷达（默认使用airy96）
+# Specify LiDAR type, we provide airy96 and mid360 LiDARs (default is airy96)
 python3 src/robots/play_go2_ros2.py --lidar mid360
 ```
 
-**控制说明**：
-- `左摇杆`：前后左右移动
-- `右摇杆`：原地旋转
-- `Backspace`: 重置环境
+**Control Instructions**:
+- `Left Stick`: Move forward/backward/left/right
+- `Right Stick`: Rotate in place
+- `Backspace`: Reset environment
 
-### Unitree Go1 四足机器人
+### Unitree Go1 Quadruped Robot
 
-<!-- Go1 演示图片 -->
-<img src="assets/go1_demo.png" alt="Go1 运动演示" style="zoom:50%;" />
+<!-- Go1 Demo Image -->
+<img src="assets/go1_demo.png" alt="Go1 Motion Demo" style="zoom:50%;" />
 
 ```bash
-# 手柄控制模式
+# Joystick control mode
 python3 src/robots/play_go1_joystick.py
 
-# ROS2 话题模式
+# ROS2 topic mode
 python3 src/robots/play_go1_ros2.py
 ```
 
-### Unitree G1 人形机器人
+### Unitree G1 Humanoid Robot
 
-<!-- G1 演示图片 -->
-<img src="assets/g1_demo.png" alt="G1 运动演示" style="zoom:50%;" />
+<!-- G1 Demo Image -->
+<img src="assets/g1_demo.png" alt="G1 Motion Demo" style="zoom:50%;" />
 
 ```bash
-# 手柄控制模式
+# Joystick control mode
 python3 src/robots/play_g1_joystick.py
 
-# ROS2 话题模式
+# ROS2 topic mode
 python3 src/robots/play_g1_ros2.py
 ```
 
-### Booster T1 双足人形机器人
+### Booster T1 Bipedal Humanoid Robot
 
-<!-- T1 演示图片 -->
-<img src="assets/t1_demo.png" alt="T1 运动演示" style="zoom:50%;" />
+<!-- T1 Demo Image -->
+<img src="assets/t1_demo.png" alt="T1 Motion Demo" style="zoom:50%;" />
 
 ```bash
-# 手柄控制模式
+# Joystick control mode
 python3 src/robots/play_t1_joystick.py
 ```
 
-### Tron 双足机器人
+### Tron Bipedal Robot
 
-<!-- A1 演示图片 -->
-<img src="assets/tron_demo.png" alt="Tron 运动演示" style="zoom:50%;" />
+<!-- A1 Demo Image -->
+<img src="assets/tron_demo.png" alt="Tron Motion Demo" style="zoom:50%;" />
 
 ```bash
-# 手柄控制模式
+# Joystick control mode
 python3 src/robots/play_tron_joystick.py
 ```
 
-玩的开心！
+Have fun!
 
-### 常见问题
+### FAQ
 
-**Q: 手柄无法识别？**  
-A: 请确保手柄已连接并安装 `pygame`。运行 `python -m pygame.examples.joystick` 测试手柄连接。
+**Q: Joystick not recognized?**  
+A: Please ensure the joystick is connected and `pygame` is installed. Run `python -m pygame.examples.joystick` to test joystick connection.
 
-**Q: 如何自定义机器人模型？**  
-A: 修改 `models/mjcf/` 目录下对应的 XML 文件，并重新训练策略模型。
+**Q: How to customize robot models?**  
+A: Modify the corresponding XML files in the `models/mjcf/` directory and retrain the policy model.
 
-## 文件结构
+## File Structure
 ```
 ROBOCON2026_Scene/
-├── README.md                       # 项目说明文档
-├── assets/                         # 资源文件
+├── README.md                       # Project documentation
+├── assets/                         # Resource files
 ├── models/
-│   ├── meshes/                     # 3D 模型文件
-│   │   ├── kfs/                    # 武功秘籍模型
-│   │   ├── robocon2026.obj         # 主场景模型
-│   │   ├── robocon2026.mtl         # 材质文件
-│   │   ├── parts/                  # 场景部件模型
-│   │   └── visual/                 # 可视化资源
-│   └── mjcf/                       # MuJoCo XML 场景文件
-│       ├── robocon2026.xml         # 主场景（MuJoCo >= 3.3.0）
-│       ├── robocon2026_old.xml     # 兼容旧版本 MuJoCo
-│       ├── mocap_env.xml           # 激光雷达仿真场景
-│       ├── kfs.xml                 # 武功秘籍场景
-│       ├── kfs_dep.xml             # 武功秘籍资产依赖
-│       ├── scene_go1.xml           # Go1 机器人场景
-│       ├── scene_g1.xml            # G1 机器人场景
-│       ├── scene_t1.xml            # T1 机器人场景
-│       └── scene_a1.xml            # A1 机器人场景
+│   ├── meshes/                     # 3D model files
+│   │   ├── kfs/                    # Martial arts manual models
+│   │   ├── robocon2026.obj         # Main scene model
+│   │   ├── robocon2026.mtl         # Material file
+│   │   ├── parts/                  # Scene component models
+│   │   └── visual/                 # Visualization resources
+│   └── mjcf/                       # MuJoCo XML scene files
+│       ├── robocon2026.xml         # Main scene (MuJoCo >= 3.3.0)
+│       ├── robocon2026_old.xml     # Compatible with older MuJoCo versions
+│       ├── mocap_env.xml           # LiDAR simulation scene
+│       ├── kfs.xml                 # Martial arts manual scene
+│       ├── kfs_dep.xml             # Martial arts manual asset dependencies
+│       ├── scene_go1.xml           # Go1 robot scene
+│       ├── scene_g1.xml            # G1 robot scene
+│       ├── scene_t1.xml            # T1 robot scene
+│       └── scene_a1.xml            # A1 robot scene
 ├── src/
-│   ├── lidar_sim.py                # 激光雷达模拟脚本
-│   ├── robots/                     # 机器人控制脚本
-│   │   ├── play_go1_joystick.py    # Go1 手柄控制
-│   │   ├── play_go1_ros2.py        # Go1 ROS2 接口
-│   │   ├── play_g1_joystick.py     # G1 手柄控制
-│   │   ├── play_g1_ros2.py         # G1 ROS2 接口
-│   │   ├── play_t1_joystick.py     # T1 手柄控制
-│   │   ├── play_a1_joystick.py     # A1 手柄控制
-│   │   ├── gamepad_reader.py       # 游戏手柄读取模块
-│   │   ├── camera_utils.py         # 相机工具模块
-│   │   └── onnx/                   # ONNX 策略模型文件
-│   └── rviz_config/                # RViz 配置文件
+│   ├── lidar_sim.py                # LiDAR simulation script
+│   ├── robots/                     # Robot control scripts
+│   │   ├── play_go1_joystick.py    # Go1 joystick control
+│   │   ├── play_go1_ros2.py        # Go1 ROS2 interface
+│   │   ├── play_g1_joystick.py     # G1 joystick control
+│   │   ├── play_g1_ros2.py         # G1 ROS2 interface
+│   │   ├── play_t1_joystick.py     # T1 joystick control
+│   │   ├── play_a1_joystick.py     # A1 joystick control
+│   │   ├── gamepad_reader.py       # Joystick reading module
+│   │   ├── camera_utils.py         # Camera utility module
+│   │   └── onnx/                   # ONNX policy model files
+│   └── rviz_config/                # RViz configuration files
 │       ├── g1.rviz
 │       ├── go1.rviz
 │       └── lidar.rviz
 └── 第二十五届全国大学生机器人大赛ROBOCON_u201C武林探秘_u201D竞技赛规则V.1.pdf
 ```
 
-## 相关链接
-- [ROBOCON官网](http://robocon.org.cn/sys-index/)
-- [MuJoCo文档](https://mujoco.readthedocs.io/)
+## Related Links
+- [ROBOCON Official Website](http://robocon.org.cn/sys-index/)
+- [MuJoCo Documentation](https://mujoco.readthedocs.io/)
 
-## 致谢
+## Citation
 
-感谢以下项目和贡献者：
+The technology stack used in this repository is based on our simulator [DISCOVERSE](https://air-discoverse.github.io/). If this work is helpful to your research, please consider citing our paper:
 
-- 感谢重庆邮电大学开源的[场景 Blender 模型](https://rcbbs.top/t/topic/2261)
-- 感谢 DeepMind [MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground) 提供的机器人运动控制策略和实现参考
+```bibtex
+@article{jia2025discoverse,
+    title={DISCOVERSE: Efficient Robot Simulation in Complex High-Fidelity Environments},
+    author={Yufei Jia and Guangyu Wang and Yuhang Dong and Junzhe Wu and Yupei Zeng and Haonan Lin and Zifan Wang and Haizhou Ge and Weibin Gu and Chuxuan Li and Ziming Wang and Yunjie Cheng and Wei Sui and Ruqi Huang and Guyue Zhou},
+    journal={arXiv preprint arXiv:2507.21981},
+    year={2025},
+    url={https://arxiv.org/abs/2507.21981}
+}
+```
+
+## Acknowledgments
+
+Thanks to the following projects and contributors:
+
+- Thanks to Chongqing University of Posts and Telecommunications for the open-source [scene Blender model](https://rcbbs.top/t/topic/2261)
+- Thanks to DeepMind [MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground) for providing robot motion control strategies and implementation references
