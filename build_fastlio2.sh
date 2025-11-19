@@ -29,13 +29,13 @@ cmake .. && make -j$(nproc)
 sudo make install
 
 log_info "step 3/6: 编译 livox_ros_driver2..."
-cd "$PROJECT_ROOT/src"
+cd "$PROJECT_ROOT"
 colcon build --symlink-install --packages-select livox_ros_driver2
 
 cd "$PROJECT_ROOT"
 
 log_info "step 4/6: 加载Livox环境..."
-source src/ws_livox/install/setup.bash
+source install/setup.bash
 
 log_info "step 5/6: 复制FAST_LIO配置文件..."
 
