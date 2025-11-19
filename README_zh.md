@@ -146,9 +146,47 @@ A: 请确保手柄已连接并安装 `pygame`。运行 `python -m pygame.example
 **Q: 如何自定义机器人模型？**  
 A: 修改 `models/mjcf/` 目录下对应的 XML 文件，并重新训练策略模型。
 
-## 使用 Fastlio2 进行 SLAM
+## 使用 FastlIO2 进行 SLAM
 
-1. 按照 
+1. 默认使用 ROS2 humble，如版本不同，请参照 `build_fastlio2.sh` 中的设置进行修改
+
+2. 赋予执行权限
+
+   ```bash
+   chmod +x build_fastlio2.sh
+   ```
+
+3. 运行编译脚本
+
+   ```bash
+   ./build_fastlio2.sh
+   ```
+
+4. 加载环境
+
+   ```bash
+   cd ros_ws
+   source install/setup.bash
+   ```
+
+5. 运行 FastLIO2
+
+   ```bash
+   ros2 launch ros2 launch fast_lio mapping.launch.py config_file:=go2_fastlio2.yaml
+   ```
+
+<img src="./assets/image-20251119221104659.png" alt="image-20251119221104659" style="zoom:80%;" />
+
+> [!note]
+>
+> 如果需要适配其它机器人，根据模型文件修改外参即可
+>
+> ```yaml
+>  extrinsic_T: [0.32057, 0.0, -0.11732]
+> extrinsic_R: [  -0.9802,    0.,     0.1980,
+>                 0.,         1.,     0.,
+>                 -0.1980,    0.,     -0.9802]
+> ```
 
 ## 文件结构
 
@@ -216,3 +254,6 @@ ROBOCON2026_Scene/
 
 - 感谢重庆邮电大学开源的[场景 Blender 模型](https://rcbbs.top/t/topic/2261)
 - 感谢 DeepMind [MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground) 提供的机器人运动控制策略和实现参考
+- 感谢香港大学 MARS 实验室开源的 [FAST_LIO](https://github.com/hku-mars/FAST_LIO) 激光雷达惯性里程计算法
+- 感谢 Livox 团队提供的 [Livox-SDK2](https://github.com/Livox-SDK/Livox-SDK2) 和 [livox_ros_driver2](https://github.com/Livox-SDK/livox_ros_driver2) 驱动支持
+
