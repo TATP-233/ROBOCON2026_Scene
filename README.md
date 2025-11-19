@@ -161,19 +161,19 @@ Have fun!
    source install/setup.bash
    ```
 
-5. run Go2 scence
+5. run Go2 scence ( in another terminal )
 
    ```bash
    python src/robots/play_go2_ros2.py 
    ```
 
-2. run keyboard control node
+2. run keyboard control node ( in another terminal )
 
    ```bash
    ros2 run teleop_twist_keyboard teleop_twist_keyboard 
    ```
 
-7. launch FastLIO2
+7. finally launch FastLIO2 ( in current terminal )
 
    ```bash
    ros2 launch fast_lio mapping.launch.py config_file:=go2_fastlio2.yaml
@@ -183,14 +183,16 @@ Have fun!
 
 > [!note]
 >
-> If you need to adapt to other robots, simply modify the extrinsic parameters according to the model file.
+> If you need to adapt to other robots, simply modify the extrinsic parameters between imu and lidar according to the model file.
 >
 > ```yaml
 > extrinsic_T: [0.32057, 0.0, -0.11732]
-> extrinsic_R: [  -0.9802,    0.,     0.1980,
->                 0.,         1.,     0.,
->                 -0.1980,    0.,     -0.9802]
+> extrinsic_R: [-0.9802,    0.,     0.1980,
+>               0.,         1.,     0.,
+>               -0.1980,    0.,     -0.9802]
 > ```
+>
+> Additionally, if you need to modify the code to support keyboard remote control, refer to `src/robots/play_go2_ros2.py` for the corresponding code.
 
 
 

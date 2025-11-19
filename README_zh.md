@@ -169,19 +169,19 @@ A: 修改 `models/mjcf/` 目录下对应的 XML 文件，并重新训练策略�
    source install/setup.bash
    ```
 
-5. 启动 Go2 仿真环境
+5. 启动 Go2 仿真环境（在新终端）
 
    ```bash
    python src/robots/play_go2_ros2.py 
    ```
 
-6. 开启键盘控制节点
+6. 开启键盘控制节点（在新终端）
 
    ```bash
    ros2 run teleop_twist_keyboard teleop_twist_keyboard 
    ```
 
-7. 运行 FastLIO2
+7. 最后运行 FastLIO2（在当前终端）
 
    ```bash
    ros2 launch fast_lio mapping.launch.py config_file:=go2_fastlio2.yaml
@@ -191,14 +191,16 @@ A: 修改 `models/mjcf/` 目录下对应的 XML 文件，并重新训练策略�
 
 > [!note]
 >
-> 如果需要适配其它机器人，根据模型文件修改外参即可
+> 如果需要适配其它机器人，根据模型文件修改 imu 和 lidar 之间的外参即可
 >
 > ```yaml
 > extrinsic_T: [0.32057, 0.0, -0.11732]
-> extrinsic_R: [  -0.9802,    0.,     0.1980,
->                 0.,         1.,     0.,
->                 -0.1980,    0.,     -0.9802]
+> extrinsic_R: [-0.9802,    0.,     0.1980,
+>               0.,         1.,     0.,
+>               -0.1980,    0.,     -0.9802]
 > ```
+>
+> 此外，如需支持键盘遥控，参考 `src/robots/play_go2_ros2.py ` 以修改相应的代码
 
 ## 文件结构
 
