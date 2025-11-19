@@ -176,7 +176,7 @@ Have fun!
 7. launch FastLIO2
 
    ```bash
-   ros2 launch ros2 launch fast_lio mapping.launch.py config_file:=go2_fastlio2.yaml
+   ros2 launch fast_lio mapping.launch.py config_file:=go2_fastlio2.yaml
    ```
 
 <img src="./assets/image-20251119221104659.png" alt="image-20251119221104659" style="zoom:80%;" />
