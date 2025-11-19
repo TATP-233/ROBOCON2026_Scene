@@ -34,6 +34,9 @@ python -m mujoco.viewer --mjcf models/mjcf/robocon2026_old.xml
 
 ```bash
 cd ROBOCON2026_Scene
+#<<< 如果在conda环境里额外运行
+conda install -c conda-forge libstdcxx-ng gcc
+#>>> 如果在conda环境里额外运行
 python src/lidar_sim_native.py
 ```
 
