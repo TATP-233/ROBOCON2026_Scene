@@ -34,9 +34,6 @@ python -m mujoco.viewer --mjcf models/mjcf/robocon2026_old.xml
 
 ```bash
 cd ROBOCON2026_Scene
-#<<< 如果在conda环境里额外运行
-conda install -c conda-forge libstdcxx-ng gcc
-#>>> 如果在conda环境里额外运行
 python src/lidar_sim_native.py
 ```
 
@@ -149,7 +146,12 @@ A: 请确保手柄已连接并安装 `pygame`。运行 `python -m pygame.example
 **Q: 如何自定义机器人模型？**  
 A: 修改 `models/mjcf/` 目录下对应的 XML 文件，并重新训练策略模型。
 
+## 使用 Fastlio2 进行 SLAM
+
+1. 按照 
+
 ## 文件结构
+
 ```
 ROBOCON2026_Scene/
 ├── README.md                       # 项目说明文档
