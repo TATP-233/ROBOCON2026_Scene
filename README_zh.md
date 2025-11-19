@@ -169,7 +169,19 @@ A: 修改 `models/mjcf/` 目录下对应的 XML 文件，并重新训练策略�
    source install/setup.bash
    ```
 
-5. 运行 FastLIO2
+5. 启动 Go2 仿真环境
+
+   ```bash
+   python src/robots/play_go2_ros2.py 
+   ```
+
+6. 开启键盘控制节点
+
+   ```bash
+   ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+   ```
+
+7. 运行 FastLIO2
 
    ```bash
    ros2 launch ros2 launch fast_lio mapping.launch.py config_file:=go2_fastlio2.yaml

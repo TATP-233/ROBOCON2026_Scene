@@ -161,13 +161,25 @@ Have fun!
    source install/setup.bash
    ```
 
-5. launch FastLIO2
+5. run Go2 scence
+
+   ```bash
+   python src/robots/play_go2_ros2.py 
+   ```
+
+2. run keyboard control node
+
+   ```bash
+   ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+   ```
+
+7. launch FastLIO2
 
    ```bash
    ros2 launch ros2 launch fast_lio mapping.launch.py config_file:=go2_fastlio2.yaml
    ```
 
-<img src="./README.assets/image-20251119221104659.png" alt="image-20251119221104659" style="zoom:80%;" />
+<img src="./assets/image-20251119221104659.png" alt="image-20251119221104659" style="zoom:80%;" />
 
 > [!note]
 >

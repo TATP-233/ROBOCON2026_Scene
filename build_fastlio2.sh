@@ -43,6 +43,7 @@ cp -r ../src/fastlio2_config/* src/FAST_LIO/config/
 log_info "✓ 配置文件已复制到 src/FAST_LIO/config/"
 
 log_info "step 6/6: 编译 FAST_LIO..."
+rosdepc install --from-paths src --ignore-src -y
 colcon build --symlink-install --packages-select fast_lio
 
 log_info "✓ 全部构建完成！"
