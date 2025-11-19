@@ -29,8 +29,8 @@ cmake .. && make -j$(nproc)
 sudo make install
 
 log_info "step 3/6: 编译 livox_ros_driver2..."
-cd "$PROJECT_ROOT/src/ws_livox/src/livox_ros_driver2"
-./build.sh humble
+cd "$PROJECT_ROOT/src"
+colcon build --symlink-install --packages-select livox_ros_driver2
 
 cd "$PROJECT_ROOT"
 

@@ -5,6 +5,7 @@
 [submodule "ros2_ws/src/Livox-SDK2"]
 	path = ros2_ws/src/Livox-SDK2
 	url = https://github.com/Livox-SDK/Livox-SDK2.git
-[submodule "ros2_ws/src/ws_livox/src/livox_ros_driver2"]
-	path = ros2_ws/src/ws_livox/src/livox_ros_driver2
-	url = https://github.com/Livox-SDK/livox_ros_driver2
+[submodule "ros2_ws/src/livox_ros_driver2"]
+	path = ros2_ws/src/livox_ros_driver2
+	url = https://github.com/Ericsii/livox_ros_driver2
+	branch = feature/use-standard-unit
