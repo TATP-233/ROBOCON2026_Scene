@@ -183,7 +183,7 @@ Have fun!
 
 > [!note]
 >
-> If you need to adapt to other robots, simply modify the extrinsic parameters between imu and lidar according to the model file.
+> If you need to adapt to other robots, simply modify the extrinsic parameters between imu and lidar  ( in the config yaml under `ros2_ws/src/FAST_LIO/config` ) according to the model file.
 >
 > ```yaml
 > extrinsic_T: [0.32057, 0.0, -0.11732]
