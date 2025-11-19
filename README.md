@@ -157,7 +157,7 @@ Have fun!
 4. source env
 
    ```bash
-   cd ros_ws
+   cd ros2_ws
    source install/setup.bash
    ```
 
