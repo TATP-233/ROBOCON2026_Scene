@@ -138,6 +138,64 @@ python3 src/robots/play_tron_joystick.py
 
 Have fun!
 
+## Use FastlIO2 for SLAM
+
+1. The default setting uses ROS2 humble. If your version is different, please refer to the settings in `build_fastlio2.sh` for modification.
+
+2. Grant execute permission
+
+   ```bash
+   chmod +x build_fastlio2.sh
+   ```
+
+3. run build script
+
+   ```bash
+   ./build_fastlio2.sh
+   ```
+
+4. source env
+
+   ```bash
+   cd ros2_ws
+   source install/setup.bash
+   ```
+
+5. run Go2 scence ( in another terminal )
+
+   ```bash
+   python src/robots/play_go2_ros2.py 
+   ```
+
+2. run keyboard control node ( in another terminal )
+
+   ```bash
+   ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+   ```
+
+7. finally launch FastLIO2 ( in current terminal )
+
+   ```bash
+   ros2 launch fast_lio mapping.launch.py config_file:=go2_fastlio2.yaml
+   ```
+
+<img src="./assets/image-20251119221104659.png" alt="image-20251119221104659" style="zoom:80%;" />
+
+> [!note]
+>
+> If you need to adapt to other robots, simply modify the extrinsic parameters between imu and lidar  ( in the config yaml under `ros2_ws/src/FAST_LIO/config` ) according to the model file.
+>
+> ```yaml
+> extrinsic_T: [0.32057, 0.0, -0.11732]
+> extrinsic_R: [-0.9802,    0.,     0.1980,
+>               0.,         1.,     0.,
+>               -0.1980,    0.,     -0.9802]
+> ```
+>
+> Additionally, if you need to modify the code to support keyboard remote control, refer to `src/robots/play_go2_ros2.py` for the corresponding code.
+
+
+
 ### FAQ
 
 **Q: Joystick not recognized?**  
@@ -211,3 +269,5 @@ Thanks to the following projects and contributors:
 
 - Thanks to Chongqing University of Posts and Telecommunications for the open-source [scene Blender model](https://rcbbs.top/t/topic/2261)
 - Thanks to DeepMind [MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground) for providing robot motion control strategies and implementation references
+- Thanks to the HKU MARS Lab for open-sourcing [FAST_LIO](https://github.com/hku-mars/FAST_LIO)
+- Thanks to Livox for maintaining [Livox-SDK2](https://github.com/Livox-SDK/Livox-SDK2) and [livox_ros_driver2](https://github.com/Livox-SDK/livox_ros_driver2)
